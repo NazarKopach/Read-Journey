@@ -1,14 +1,12 @@
 import { Outlet } from "react-router-dom";
+import { Suspense } from "react";
+import Header from "../components/Header/Header.jsx";
 
-import Header from "../components/Header/Header";
-
-const MainLayout = () => {
+const MainLayout = ({ children }) => {
   return (
     <div>
       <Header />
-      <main>
-        <Outlet />
-      </main>
+      <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
     </div>
   );
 };
