@@ -1,9 +1,10 @@
 import RegisterForm from "../../components/RegisterForm/RegisterForm";
 import RegisterImg from "../../components/RegisterImg/RegisterImg";
+import styles from "./RegisterPage.module.css";
 
 const RegisterPage = () => {
   return (
-    <div>
+    <div className={styles.register_page_div}>
       <RegisterForm />
       <RegisterImg />
     </div>
