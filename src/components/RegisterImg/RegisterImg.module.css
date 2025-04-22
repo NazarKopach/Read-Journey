@@ -3,21 +3,14 @@
   flex-direction: column;
   border-radius: 30px;
   width: 100%;
-  max-width: 600px;
-  min-height: 736px;
+  max-width: 335px;
+  min-height: 351px;
   background: #1f1f1f;
   padding-left: 64px;
   padding-top: 40px;
-  position: relative;
-}
-
-.register_img_phone {
-  position: absolute;
-  top: 56.1%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  max-width: 405px;
+  background-image: url(../../img/Phone_mobile.png);
+  background-position: bottom;
+  background-repeat: no-repeat;
 }
 
 /* tablet */
@@ -33,5 +26,8 @@
 @media (min-width: 1440px) {
   .register_img_div {
     display: flex;
+    max-width: 600px;
+    min-height: 736px;
+    background-image: url(../../img/Phone.png);
   }
 }

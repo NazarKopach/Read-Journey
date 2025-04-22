@@ -181,6 +181,31 @@ const SvgSprite = () => {
             d="M31.36 16c0 8.483-6.877 15.36-15.36 15.36s-15.36-6.877-15.36-15.36c0-8.483 6.877-15.36 15.36-15.36s15.36 6.877 15.36 15.36z"
           ></path>
         </symbol>
+        <symbol id="icon-Ellipse-1" viewBox="0 0 32 32">
+          <path d="M32 16c0 8.837-7.163 16-16 16s-16-7.163-16-16c0-8.837 7.163-16 16-16s16 7.163 16 16z"></path>
+          <path
+            fill="none"
+            stroke="#f9f9f9"
+            style={{ stroke: "var(--color1, #f9f9f9)" }}
+            strokeLinejoin="miter"
+            strokeLinecap="butt"
+            strokeliterlimit="4"
+            strokeWidth="0.8"
+            d="M31.6 16c0 8.616-6.984 15.6-15.6 15.6s-15.6-6.984-15.6-15.6c0-8.616 6.984-15.6 15.6-15.6s15.6 6.984 15.6 15.6z"
+          ></path>
+        </symbol>
+        <symbol id="icon-menu-04" viewBox="0 0 32 32">
+          <path
+            fill="none"
+            stroke="#f9f9f9"
+            style={{ stroke: "var(--color1, #f9f9f9)" }}
+            strokeLinejoin="round"
+            strokeLinecap="round"
+            strokeMiterlimit="4"
+            strokeWidth="2.2857"
+            d="M4 16h24M4 8h24M12 24h16"
+          ></path>
+        </symbol>
       </defs>
     </svg>
   );

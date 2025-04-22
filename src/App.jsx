@@ -1,8 +1,11 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import { RestrictedRoute } from "./components/RestrictedRoute/RestrictedRoute";
 import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
 import SvgSprite from "./components/SvgSprite/SvgSprite";
+import { useDispatch, useSelector } from "react-redux";
+import { selectUserIsRefreshing } from "./redux/auth/selectors";
+import { apiGetCurrentUser } from "./redux/auth/operations";
 
 const LoginPage = lazy(() => import("./pages/LoginPage/LoginPage"));
 const MyLibraryPage = lazy(() => import("./pages/MyLibraryPage/MyLibraryPage"));
@@ -15,6 +18,17 @@ const RegisterPage = lazy(() => import("./pages/RegisterPage/RegisterPage"));
 const MainLayout = lazy(() => import("./MainLayout/MainLayout"));
 
 function App() {
+  const isRefreshing = useSelector(selectUserIsRefreshing);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(apiGetCurrentUser());
+  }, [dispatch]);
+
+  if (isRefreshing) {
+    return <div>Refreshing...</div>;
+  }
+
   return (
     <div>
       <SvgSprite />
@@ -29,7 +43,7 @@ function App() {
             element={<RestrictedRoute component={<RegisterPage />} />}
           />
 
-          <Route path="/" element={<MainLayout />}>
+          <Route path="/" element={<PrivateRoute component={<MainLayout />} />}>
             <Route
               path="library"
               element={<PrivateRoute component={<MyLibraryPage />} />}

@@ -1,4 +1,4 @@
-.register_form_div {
+.login_form_div {
   display: block;
   flex-direction: column;
   border-radius: 30px;
@@ -9,7 +9,7 @@
   padding: 20px;
 }
 
-.register_form_title {
+.login_form_title {
   font-family: var(--font-family);
   font-weight: 700;
   font-size: 32px;
@@ -21,7 +21,7 @@
   max-width: 294px;
 }
 
-.register_form_span {
+.login_form_span {
   font-family: var(--font-family);
   font-weight: 700;
   font-size: 32px;
@@ -30,7 +30,7 @@
   color: #686868;
 }
 
-.register_form_input {
+.login_form_input {
   border-radius: 12px;
   width: 100%;
   max-width: 472px;
@@ -47,23 +47,23 @@
   padding-left: 10px;
 }
 
-.register_form_input_password_div {
+.login_form_input_password_div {
   position: relative;
   max-width: 472px;
 }
 
-.register_form_input_icon {
+.login_form_input_icon {
   position: absolute;
   top: 15px;
   right: 13px;
   cursor: pointer;
 }
 
-.register_form_btn {
+.login_form_btn {
   border-radius: 30px;
   width: 140px;
   height: 42px;
-  margin-top: 20px;
+  margin-top: 64px;
   margin-right: 14px;
   border: none;
   font-family: var(--font-family);
@@ -74,7 +74,7 @@
   color: #1f1f1f;
 }
 
-.register_form_input_error {
+.login_form_input_error {
   font-family: var(--font-family);
   font-weight: 500;
   font-size: 12px;
@@ -84,7 +84,7 @@
   margin: 0;
 }
 
-.register_form_link {
+.login_form_link {
   font-family: var(--font-family);
   font-weight: 500;
   font-size: 12px;
@@ -98,14 +98,14 @@
 /* tablet */
 
 @media (min-width: 768px) {
-  .register_form_div {
+  .login_form_div {
     padding-left: 64px;
     padding-top: 40px;
     max-width: 704px;
     min-height: 960px;
   }
 
-  .register_form_title {
+  .login_form_title {
     font-size: 64px;
     line-height: 94%;
     margin-top: 157px;
@@ -113,26 +113,26 @@
     max-width: 444px;
   }
 
-  .register_form_input {
+  .login_form_input {
     height: 50px;
     margin-bottom: 14px;
   }
 
-  .register_form_span {
+  .login_form_span {
     font-size: 64px;
     line-height: 94%;
   }
 
-  .register_form_btn {
+  .login_form_btn {
     font-size: 20px;
     line-height: 100%;
     width: 225px;
     height: 52px;
-    margin-top: 68px;
+    margin-top: 132px;
     margin-right: 20px;
   }
 
-  .register_form_link {
+  .login_form_link {
     font-size: 14px;
     line-height: 129%;
   }
@@ -141,14 +141,14 @@
 /*  Desktop */
 
 @media (min-width: 1440px) {
-  .register_form_div {
+  .login_form_div {
     padding-left: 64px;
     padding-top: 40px;
     max-width: 600px;
     min-height: 736px;
   }
 
-  .register_form_title {
+  .login_form_title {
     margin-top: 107px;
   }
 }
