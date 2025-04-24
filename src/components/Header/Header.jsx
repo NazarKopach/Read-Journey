@@ -1,13 +1,10 @@
-import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Icon } from "../Icon/Icon";
 
 import UserMenu from "../UserMenu/UserMenu";
 
 import styles from "./Header.module.css";
-import clsx from "clsx";
-const buildCssClasses = ({ isActive }) =>
-  clsx(styles.link, isActive && styles.active);
+import Navigation from "../Navigation/Navigation";
 
 const Header = () => {
   const [isTablet, setIsTablet] = useState(window.innerWidth < 1440);
@@ -28,14 +25,9 @@ const Header = () => {
       ) : (
         <Icon id="icon-Logo-2" width="182" height="17" />
       )}
-      <nav className={styles.header_link_div}>
-        <NavLink to="/recommended" className={buildCssClasses}>
-          Home
-        </NavLink>
-        <NavLink to="/library" className={buildCssClasses}>
-          My library
-        </NavLink>
-      </nav>
+      <div className={styles.header_link_div}>
+        <Navigation />
+      </div>
       <UserMenu />
     </div>
   );

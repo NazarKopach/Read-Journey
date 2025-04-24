@@ -34,7 +34,6 @@
 @media (min-width: 768px) {
   .header_link_div {
     display: flex;
-    gap: 40px;
   }
 }
 

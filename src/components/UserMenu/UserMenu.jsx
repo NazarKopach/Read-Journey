@@ -6,6 +6,24 @@ import { useState } from "react";
 import { Icon } from "../Icon/Icon";
 import MobileModal from "../MobileModal/MobileModal";
 
+const customStyles = {
+  overlay: {
+    backgroundColor: "rgba(20, 20, 20, 0.6)",
+  },
+  content: {
+    top: "0",
+    left: "auto",
+    right: "0",
+    bottom: "0",
+    width: "50vw",
+    height: "100vh",
+    padding: "34px",
+    border: "none",
+    borderRadius: "0",
+    backgroundColor: "#262626",
+  },
+};
+
 const UserMenu = () => {
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
@@ -22,6 +40,7 @@ const UserMenu = () => {
 
   const onLogout = () => {
     dispatch(apiLogoutUser());
+    closeModal();
   };
 
   return (
@@ -48,7 +67,11 @@ const UserMenu = () => {
         className={styles.user_menu_icon_burger}
         onClick={openModal}
       />
-      <MobileModal modalIsOpen={modalIsOpen} closeModal={closeModal} />
+      <MobileModal
+        modalIsOpen={modalIsOpen}
+        closeModal={closeModal}
+        customStyles={customStyles}
+      />
     </div>
   );
 };

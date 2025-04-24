@@ -1,26 +1,35 @@
 import ReactModal from "react-modal";
 import { Icon } from "../Icon/Icon";
 import styles from "./MobileModal.module.css";
+import Navigation from "../Navigation/Navigation";
+import { apiLogoutUser } from "../../redux/auth/operations";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 
-const customStyles = {
-  overlay: {
-    backgroundColor: "rgba(20, 20, 20, 0.6)",
-  },
-  content: {
-    top: "0",
-    left: "auto",
-    right: "0",
-    bottom: "0",
-    width: "50vw",
-    height: "100vh",
-    padding: "34px",
-    border: "none",
-    borderRadius: "0",
-    backgroundColor: "#262626",
-  },
-};
+const MobileModal = ({ modalIsOpen, closeModal, customStyles }) => {
+  const dispatch = useDispatch();
 
-const MobileModal = ({ modalIsOpen, closeModal }) => {
+  const onLogout = () => {
+    dispatch(apiLogoutUser());
+    closeModal();
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768 && modalIsOpen) {
+        closeModal();
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [modalIsOpen, closeModal]);
+
   return (
     <ReactModal
       isOpen={modalIsOpen}
@@ -29,13 +38,19 @@ const MobileModal = ({ modalIsOpen, closeModal }) => {
       contentLabel="Example Modal"
       ariaHideApp={false}
     >
-      <Icon
-        id="icon-x"
-        width="28"
-        height="28"
-        onClick={closeModal}
-        className={styles.mobile_modal_close_icon}
-      />
+      <div className={styles.mobile_modal_icon_div}>
+        <Icon id="icon-x" width="28" height="28" onClick={closeModal} />
+      </div>
+      <div className={styles.mobile_modal_nav_div}>
+        <Navigation closeModal={closeModal} />
+      </div>
+      <button
+        className={styles.button_user_mobile}
+        type="button"
+        onClick={onLogout}
+      >
+        Logout
+      </button>
     </ReactModal>
   );
 };

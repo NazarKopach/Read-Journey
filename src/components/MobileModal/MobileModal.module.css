@@ -1,3 +1,23 @@
-.mobile_modal_close_icon {
-  position: absolute;
+.mobile_modal_icon_div {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.button_user_mobile {
+  display: block;
+  margin-top: 300px;
+  margin-right: auto;
+  margin-left: auto;
+  border: 1px solid rgba(249, 249, 249, 0.2);
+  border-radius: 30px;
+  padding: 12px 28px;
+  width: 114px;
+  height: 42px;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 112%;
+  letter-spacing: 0.02em;
+  color: #f9f9f9;
+  background-color: transparent;
 }
