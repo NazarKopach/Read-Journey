@@ -228,6 +228,28 @@ const SvgSprite = () => {
             d="M8 8l16 16"
           ></path>
         </symbol>
+        <symbol id="icon-Frame-32" viewBox="0 0 32 32">
+          <path
+            fill="none"
+            stroke="#f9f9f9"
+            style={{ stroke: "var(--color1,rgba(249, 249, 249, 0.2)" }}
+            strokeLinejoin="miter"
+            strokeLinecap="butt"
+            strokeMiterlimit="4"
+            strokeWidth="0.8"
+            d="M31.6 16c0 8.616-6.984 15.6-15.6 15.6s-15.6-6.984-15.6-15.6c0-8.616 6.984-15.6 15.6-15.6s15.6 6.984 15.6 15.6z"
+          ></path>
+          <path
+            fill="none"
+            stroke="#f9f9f9"
+            style={{ stroke: "var(--color1, rgba(249, 249, 249, 0.2)" }}
+            strokeLinejoin="round"
+            strokeLinecap="round"
+            strokeMiterlimit="4"
+            strokeWidth="1.2"
+            d="M18 20l-4-4 4-4"
+          ></path>
+        </symbol>
         <symbol id="icon-Frame-33" viewBox="0 0 32 32">
           <path
             fill="none"
@@ -271,6 +293,28 @@ const SvgSprite = () => {
             strokeWidth="1.2"
             d="M14 12l4 4-4 4"
           ></path>
+          <symbol id="icon-Frame-35" viewBox="0 0 32 32">
+            <path
+              fill="none"
+              stroke="#f9f9f9"
+              style={{ stroke: "var(--color1,rgba(249, 249, 249, 0.2)" }}
+              strokeLinejoin="miter"
+              strokeLinecap="butt"
+              strokeMiterlimit="4"
+              strokeWidth="0.8"
+              d="M31.6 16c0 8.616-6.984 15.6-15.6 15.6s-15.6-6.984-15.6-15.6c0-8.616 6.984-15.6 15.6-15.6s15.6 6.984 15.6 15.6z"
+            ></path>
+            <path
+              fill="none"
+              stroke="#f9f9f9"
+              style={{ stroke: "var(--color1, rgba(249, 249, 249, 0.2)" }}
+              strokeLinejoin="round"
+              strokeLinecap="round"
+              strokeMiterlimit="4"
+              strokeWidth="1.2"
+              d="M14 12l4 4-4 4"
+            ></path>
+          </symbol>
         </symbol>
       </defs>
     </svg>

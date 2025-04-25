@@ -8,7 +8,7 @@ export const fetchBooks = createAsyncThunk(
       const response = await authInstance.get("/books/recommend", {
         params: { page },
       });
-      return response.data.results;
+      return response.data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
     }

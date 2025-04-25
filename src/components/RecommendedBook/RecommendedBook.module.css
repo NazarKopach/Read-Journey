@@ -25,6 +25,11 @@
   margin-bottom: 20px;
 }
 
-.recommended_book_icon {
+.recommended_book_icon_left {
   margin-right: 8px;
+  cursor: pointer;
+}
+
+.recommended_book_icon_right {
+  cursor: pointer;
 }

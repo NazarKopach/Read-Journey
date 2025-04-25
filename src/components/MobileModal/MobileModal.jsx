@@ -35,7 +35,6 @@ const MobileModal = ({ modalIsOpen, closeModal, customStyles }) => {
       isOpen={modalIsOpen}
       onRequestClose={closeModal}
       style={customStyles}
-      contentLabel="Example Modal"
       ariaHideApp={false}
     >
       <div className={styles.mobile_modal_icon_div}>

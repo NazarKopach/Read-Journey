@@ -46,7 +46,7 @@ const LoginForm = () => {
         <Icon id="icon-Logo-2" width="182" height="17" />
       )}
       <h1 className={styles.login_form_title}>
-        Expand your mind, reading{" "}
+        Expand your mind, reading
         <span className={styles.login_form_span}>a book</span>
       </h1>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
