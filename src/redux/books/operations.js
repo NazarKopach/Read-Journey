@@ -3,10 +3,10 @@ import { authInstance } from "../auth/operations";
 
 export const fetchBooks = createAsyncThunk(
   "books/fetchAll",
-  async (page = 1, thunkApi) => {
+  async ({ page, title = "", author = "" }, thunkApi) => {
     try {
       const response = await authInstance.get("/books/recommend", {
-        params: { page },
+        params: { page, title, author },
       });
       return response.data;
     } catch (error) {

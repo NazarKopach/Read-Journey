@@ -18,18 +18,18 @@ const RecommendedBook = () => {
   const [loadPage, setLoadPage] = useState(1);
 
   useEffect(() => {
-    dispatch(fetchBooks(loadPage));
+    dispatch(fetchBooks({ page: loadPage }));
   }, [dispatch, loadPage]);
 
   const changePage = (direction) => {
     setLoadPage((prev) => {
+      let newPage = prev;
       if (direction === "prev" && prev > 1) {
-        return prev - 1;
+        newPage = prev - 1;
+      } else if (direction === "next" && prev < totalPages) {
+        newPage = prev + 1;
       }
-      if (direction === "next" && page < totalPages) {
-        return prev + 1;
-      }
-      return prev;
+      return newPage;
     });
   };
 
@@ -38,41 +38,23 @@ const RecommendedBook = () => {
       <div className={styles.recommended_book_title_icon_div}>
         <h2 className={styles.recommended_book_title}>Recommended</h2>
         {isLoading && <p>Loading ...</p>}
+
         <div>
-          {page > 1 ? (
-            <Icon
-              id="icon-Frame-33"
-              width="40"
-              height="40"
-              className={styles.recommended_book_icon_left}
-              onClick={() => changePage("prev")}
-            />
-          ) : (
-            <Icon
-              id="icon-Frame-32"
-              width="40"
-              height="40"
-              className={styles.recommended_book_icon_left}
-              onClick={() => changePage("prev")}
-            />
-          )}
-          {page < totalPages ? (
-            <Icon
-              id="icon-Frame-34"
-              width="40"
-              height="40"
-              onClick={() => changePage("next")}
-              className={styles.recommended_book_icon_right}
-            />
-          ) : (
-            <Icon
-              id="icon-Frame-35"
-              width="40"
-              height="40"
-              onClick={() => changePage("next")}
-              className={styles.recommended_book_icon_right}
-            />
-          )}
+          Page {loadPage} of {totalPages}
+          <Icon
+            id={loadPage > 1 ? "icon-Frame-33" : "icon-Frame-32"}
+            width="40"
+            height="40"
+            className={styles.recommended_book_icon_left}
+            onClick={() => changePage("prev")}
+          />
+          <Icon
+            id={loadPage < totalPages ? "icon-Frame-34" : "icon-Frame-35"}
+            width="40"
+            height="40"
+            onClick={() => changePage("next")}
+            className={styles.recommended_book_icon_right}
+          />
         </div>
       </div>
       <RecommendedList items={items} />
