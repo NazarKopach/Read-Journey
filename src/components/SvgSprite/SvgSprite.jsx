@@ -293,28 +293,74 @@ const SvgSprite = () => {
             strokeWidth="1.2"
             d="M14 12l4 4-4 4"
           ></path>
-          <symbol id="icon-Frame-35" viewBox="0 0 32 32">
-            <path
-              fill="none"
-              stroke="#f9f9f9"
-              style={{ stroke: "var(--color1,rgba(249, 249, 249, 0.2)" }}
-              strokeLinejoin="miter"
-              strokeLinecap="butt"
-              strokeMiterlimit="4"
-              strokeWidth="0.8"
-              d="M31.6 16c0 8.616-6.984 15.6-15.6 15.6s-15.6-6.984-15.6-15.6c0-8.616 6.984-15.6 15.6-15.6s15.6 6.984 15.6 15.6z"
-            ></path>
-            <path
-              fill="none"
-              stroke="#f9f9f9"
-              style={{ stroke: "var(--color1, rgba(249, 249, 249, 0.2)" }}
-              strokeLinejoin="round"
-              strokeLinecap="round"
-              strokeMiterlimit="4"
-              strokeWidth="1.2"
-              d="M14 12l4 4-4 4"
-            ></path>
-          </symbol>
+        </symbol>
+        <symbol id="icon-Frame-35" viewBox="0 0 32 32">
+          <path
+            fill="none"
+            stroke="#f9f9f9"
+            style={{ stroke: "var(--color1,rgba(249, 249, 249, 0.2)" }}
+            strokeLinejoin="miter"
+            strokeLinecap="butt"
+            strokeMiterlimit="4"
+            strokeWidth="0.8"
+            d="M31.6 16c0 8.616-6.984 15.6-15.6 15.6s-15.6-6.984-15.6-15.6c0-8.616 6.984-15.6 15.6-15.6s15.6 6.984 15.6 15.6z"
+          ></path>
+          <path
+            fill="none"
+            stroke="#f9f9f9"
+            style={{ stroke: "var(--color1, rgba(249, 249, 249, 0.2)" }}
+            strokeLinejoin="round"
+            strokeLinecap="round"
+            strokeMiterlimit="4"
+            strokeWidth="1.2"
+            d="M14 12l4 4-4 4"
+          ></path>
+        </symbol>
+        <symbol id="icon-log-in" viewBox="0 0 32 32">
+          <path
+            fill="none"
+            stroke="#f9f9f9"
+            style={{ stroke: "var(--color1, #f9f9f9)" }}
+            strokeLinejoin="round"
+            strokeLinecap="round"
+            strokeMiterlimit="4"
+            strokeWidth="2.6667"
+            d="M18.667 22.667l6.667-6.667-6.667-6.667"
+          ></path>
+          <path
+            fill="none"
+            stroke="#f9f9f9"
+            style={{ stroke: "var(--color1, #f9f9f9)" }}
+            strokeLinejoin="round"
+            strokeLinecap="round"
+            strokeMiterlimit="4"
+            strokeWidth="2.6667"
+            d="M25.333 16h-18.667"
+          ></path>
+        </symbol>
+        <symbol id="icon-2" viewBox="0 0 32 32">
+          <path
+            fill="#f9f9f9"
+            style={{ fill: "var(--color1, #f9f9f9)" }}
+            d="M32 16c0 8.837-7.163 16-16 16s-16-7.163-16-16c0-8.837 7.163-16 16-16s16 7.163 16 16z"
+          ></path>
+          <path
+            fill="#1f1f1f"
+            style={{ fill: "var(--color2, #1f1f1f)" }}
+            d="M19.336 20.364h-6.807v-1.498l3.476-3.578c0.776-0.824 1.164-1.503 1.164-2.036 0-0.398-0.126-0.718-0.378-0.96-0.242-0.242-0.558-0.364-0.945-0.364-0.776 0-1.343 0.398-1.702 1.193l-1.687-0.989c0.31-0.688 0.761-1.217 1.353-1.585 0.601-0.378 1.27-0.567 2.007-0.567 0.921 0 1.711 0.291 2.371 0.873 0.659 0.572 0.989 1.348 0.989 2.327 0 1.057-0.558 2.143-1.673 3.258l-1.993 1.993h3.825v1.935z"
+          ></path>
+        </symbol>
+        <symbol id="icon-1" viewBox="0 0 32 32">
+          <path
+            fill="#f9f9f9"
+            style={{ fill: "var(--color1, #f9f9f9)" }}
+            d="M32 16c0 8.837-7.163 16-16 16s-16-7.163-16-16c0-8.837 7.163-16 16-16s16 7.163 16 16z"
+          ></path>
+          <path
+            fill="#1f1f1f"
+            style={{ fill: "var(--color2, #1f1f1f)" }}
+            d="M13.348 11.127l2.676-0.945h1.745v10.182h-2.007v-8.058l-1.92 0.538-0.495-1.716z"
+          ></path>
         </symbol>
       </defs>
     </svg>

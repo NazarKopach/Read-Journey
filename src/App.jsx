@@ -6,6 +6,9 @@ import SvgSprite from "./components/SvgSprite/SvgSprite";
 import { useDispatch, useSelector } from "react-redux";
 import { selectUserIsRefreshing } from "./redux/auth/selectors";
 import { apiGetCurrentUser } from "./redux/auth/operations";
+import Loader from "./components/Loader/Loader";
+
+import { ToastContainer } from "react-toastify";
 
 const LoginPage = lazy(() => import("./pages/LoginPage/LoginPage"));
 const MyLibraryPage = lazy(() => import("./pages/MyLibraryPage/MyLibraryPage"));
@@ -26,7 +29,11 @@ function App() {
   }, [dispatch]);
 
   if (isRefreshing) {
-    return <div>Refreshing...</div>;
+    return (
+      <div>
+        <Loader />
+      </div>
+    );
   }
 
   return (
@@ -63,6 +70,7 @@ function App() {
           </Route>
         </Routes>
       </Suspense>
+      <ToastContainer position="top-center" />
     </div>
   );
 }

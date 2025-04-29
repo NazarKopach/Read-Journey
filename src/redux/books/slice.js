@@ -7,8 +7,14 @@ const booksSlice = createSlice({
     items: [],
     loading: false,
     error: null,
+    page: 1,
+    totalPages: 1,
   },
-  reducers: {},
+  reducers: {
+    setPage: (state, action) => {
+      state.page = action.payload;
+    },
+  },
   extraReducers: (builder) =>
     builder
       .addCase(fetchBooks.pending, (state) => {
@@ -18,6 +24,7 @@ const booksSlice = createSlice({
       .addCase(fetchBooks.fulfilled, (state, action) => {
         state.loading = false;
         state.items = action.payload;
+        state.totalPages = action.payload.totalPages;
       })
       .addCase(fetchBooks.rejected, (state, action) => {
         state.loading = false;
@@ -25,4 +32,5 @@ const booksSlice = createSlice({
       }),
 });
 
+export const { setPage } = booksSlice.actions;
 export const booksReducer = booksSlice.reducer;

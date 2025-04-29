@@ -1,6 +1,7 @@
 import ReactModal from "react-modal";
 import styles from "./Recommended.module.css";
 import { Icon } from "../Icon/Icon";
+// import { useDispatch } from "react-redux";
 
 const RecommendedModal = ({
   modalIsOpen,
@@ -12,6 +13,8 @@ const RecommendedModal = ({
   totalPages,
   id,
 }) => {
+  // const dispatch = useDispatch();
+
   return (
     <ReactModal
       isOpen={modalIsOpen}
@@ -29,13 +32,18 @@ const RecommendedModal = ({
         />
       </div>
 
-      <div key={id} className={styles.recommended_modal_div}>
+      <li key={id} className={styles.recommended_modal_div}>
         <img src={img} className={styles.recommended_modal_img} />
         <p className={styles.recommended_modal_title}>{title}</p>
         <p className={styles.recommended_modal_author}>{author}</p>
         <p className={styles.recommended_modal_total_page}>{totalPages}</p>
-        <button className={styles.recommended_modal_button}>Add to</button>
-      </div>
+        <button
+          className={styles.recommended_modal_button}
+          // onClick={() => dispatch(addRecommendedBooks(id))}
+        >
+          Add to
+        </button>
+      </li>
     </ReactModal>
   );
 };

@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setTitle, setAuthor } from "../../redux/filters/filters";
 import styles from "./Filters.module.css";
 import { fetchBooks } from "../../redux/books/operations";
+import { setPage } from "../../redux/books/slice";
 
 const Filters = () => {
   const dispatch = useDispatch();
@@ -9,6 +10,7 @@ const Filters = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(setPage(1));
     dispatch(fetchBooks({ page: 1, title, author }));
   };
 

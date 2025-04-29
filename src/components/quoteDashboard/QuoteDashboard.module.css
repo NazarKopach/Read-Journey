@@ -1,0 +1,25 @@
+.quote_dashboard_div {
+  display: flex;
+  border-radius: 12px;
+  width: 313px;
+  height: 83px;
+  background: #262626;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.quote_dashboard_p {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  color: #686868;
+  width: 219px;
+  height: 54px;
+  margin-left: 14px;
+}
+
+.quote_dashboard_span {
+  color: #f9f9f9;
+}

@@ -1,8 +1,10 @@
 .filters_div {
+  margin-top: 20px;
   padding: 20px;
 }
 
 .filters_span {
+  display: block;
   font-family: var(--font-family);
   font-weight: 500;
   font-size: 14px;
@@ -10,7 +12,7 @@
   letter-spacing: -0.02em;
   color: #f9f9f9;
   margin-left: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 .filters_input_div {

@@ -33,3 +33,10 @@
 .recommended_book_icon_right {
   cursor: pointer;
 }
+
+.recommended_books_error {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 16px;
+  color: red;
+}

@@ -63,6 +63,7 @@ const RecommendedList = ({ items }) => {
           author={selectedBook.author}
           title={selectedBook.title}
           totalPages={selectedBook.totalPages}
+          id={selectedBook._id}
         />
       )}
     </>
