@@ -13,6 +13,7 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist";
+import { recommendedBooksReducer } from "./recommendedBooks/slice";
 
 const authConfig = {
   key: "auth",
@@ -25,6 +26,7 @@ export const store = configureStore({
     auth: persistReducer(authConfig, authReducer),
     books: booksReducer,
     filters: filtersReducer,
+    recBooks: recommendedBooksReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

@@ -1,4 +1,6 @@
-import Dashboard from "../../components/Dashboard/Dashboard";
+import Filters from "../../components/Filters/Filters";
+import InfoDashboard from "../../components/InfoDashboard/InfoDashboard";
+import QuoteDashboard from "../../components/QuoteDashboard/QuoteDashboard";
 import RecommendedBook from "../../components/RecommendedBook/RecommendedBook";
 
 import styles from "./RecommendedPage.module.css";
@@ -6,7 +8,12 @@ import styles from "./RecommendedPage.module.css";
 const RecommendedPage = () => {
   return (
     <div className={styles.recommended_page_div}>
-      <Dashboard />
+      <div className={styles.recommended_page_dashboard}>
+        <Filters />
+        <InfoDashboard />
+        <QuoteDashboard />
+      </div>
+
       <RecommendedBook />
     </div>
   );

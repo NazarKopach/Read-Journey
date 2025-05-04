@@ -9,6 +9,7 @@ import { apiGetCurrentUser } from "./redux/auth/operations";
 import Loader from "./components/Loader/Loader";
 
 import { ToastContainer } from "react-toastify";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 const LoginPage = lazy(() => import("./pages/LoginPage/LoginPage"));
 const MyLibraryPage = lazy(() => import("./pages/MyLibraryPage/MyLibraryPage"));
@@ -50,23 +51,13 @@ function App() {
             element={<RestrictedRoute component={<RegisterPage />} />}
           />
 
-          <Route path="/" element={<PrivateRoute component={<MainLayout />} />}>
-            <Route
-              path="library"
-              element={<PrivateRoute component={<MyLibraryPage />} />}
-            />
-            <Route
-              path="reading"
-              element={<PrivateRoute component={<ReadingPage />} />}
-            />
-            <Route
-              path="recommended"
-              element={<PrivateRoute component={<RecommendedPage />} />}
-            />
-            <Route
-              path="*"
-              element={<RestrictedRoute component={<NotFoundPage />} />}
-            />
+          <Route path="/" element={<PrivateRoute component={<Dashboard />} />}>
+            <Route element={<MainLayout />}>
+              <Route path="library" element={<MyLibraryPage />} />
+              <Route path="reading" element={<ReadingPage />} />
+              <Route path="recommended" element={<RecommendedPage />} />
+            </Route>
+            <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>
       </Suspense>

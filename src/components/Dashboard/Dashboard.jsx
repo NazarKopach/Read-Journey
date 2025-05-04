@@ -1,15 +1,9 @@
-import { NavLink } from "react-router-dom";
-import Filters from "../Filters/Filters";
-import InfoDashboard from "../InfoDashboard/InfoDashboard";
-import styles from "./Dashboard.module.css";
-import QuoteDashboard from "../QuoteDashboard/QuoteDashboard";
+import { Outlet } from "react-router-dom";
 
 const Dashboard = () => {
   return (
-    <div className={styles.dasboard_div}>
-      <Filters />
-      <InfoDashboard />
-      <QuoteDashboard />
+    <div>
+      <Outlet />
     </div>
   );
 };

@@ -1,17 +1,17 @@
-import { Hourglass } from "react-loader-spinner";
+import { Blocks } from "react-loader-spinner";
 import style from "./Loader.module.css";
 
 const Loader = () => {
   return (
     <div className={style.loader}>
-      <Hourglass
-        visible={true}
+      <Blocks
         height="80"
         width="80"
-        ariaLabel="hourglass-loading"
+        color="#4fa94d"
+        ariaLabel="blocks-loading"
         wrapperStyle={{}}
-        wrapperClass=""
-        colors={["#306cce", "#72a1ed"]}
+        wrapperClass="blocks-wrapper"
+        visible={true}
       />
     </div>
   );
