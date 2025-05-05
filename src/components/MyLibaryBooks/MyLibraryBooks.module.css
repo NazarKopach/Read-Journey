@@ -3,7 +3,7 @@
   flex-direction: column;
   border-radius: 30px;
   width: 847px;
-  height: 651px;
+  min-height: 651px;
   background: #1f1f1f;
   padding: 40px;
 }
@@ -24,4 +24,20 @@
   align-items: center;
   justify-content: space-between;
   height: 58px;
+}
+
+.my_library_books_select {
+  border: 1px solid #3e3e3e;
+  border-radius: 12px;
+  padding: 14px;
+  width: 153px;
+  height: 46px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #f9f9f9;
+  background-color: transparent;
 }

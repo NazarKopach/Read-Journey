@@ -1,8 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { addRecommendedBooks } from "./operations";
+import {
+  addRecommendedBooks,
+  delRecommendedBooks,
+  userRecommendedBooks,
+} from "./operations";
 
 const initialState = {
-  books: [],
+  userBooks: [],
   isLoading: false,
   error: null,
 };
@@ -12,7 +16,7 @@ const recommendedBooksSlice = createSlice({
   initialState,
   reducers: {
     resetRecommendedBooks: (state) => {
-      state.books = [];
+      state.userBooks = [];
       state.error = null;
       state.isLoading = false;
     },
@@ -25,11 +29,36 @@ const recommendedBooksSlice = createSlice({
       })
       .addCase(addRecommendedBooks.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.books.push(action.payload);
+        state.userBooks.push(action.payload);
       })
       .addCase(addRecommendedBooks.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload || "Something went wrong";
+      })
+      .addCase(userRecommendedBooks.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(userRecommendedBooks.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.userBooks = action.payload;
+      })
+      .addCase(userRecommendedBooks.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload || "Something went wrong";
+      })
+      .addCase(delRecommendedBooks.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(delRecommendedBooks.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.userBooks = state.userBooks.filter(
+          (book) => book._id !== action.meta.arg
+        );
+      })
+      .addCase(delRecommendedBooks.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
       });
   },
 });

@@ -26,3 +26,9 @@ export const schemaRegister = yup.object().shape({
     .min(8, "Password length must be at least 8 characters")
     .required("Password is required"),
 });
+
+export const schemaAddBooks = yup.object().shape({
+  title: yup.string().required("Title is required"),
+  author: yup.string().required("Author is required"),
+  pages: yup.string().required("Pages is required"),
+});

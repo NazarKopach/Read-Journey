@@ -362,6 +362,64 @@ const SvgSprite = () => {
             d="M13.348 11.127l2.676-0.945h1.745v10.182h-2.007v-8.058l-1.92 0.538-0.495-1.716z"
           ></path>
         </symbol>
+        <symbol id="icon-delete" viewBox="0 0 32 32">
+          <path
+            fill="#e85050"
+            style={{ fill: "var(--color1, #e85050)" }}
+            opacity="0.1"
+            d="M32 16c0 8.837-7.163 16-16 16s-16-7.163-16-16c0-8.837 7.163-16 16-16s16 7.163 16 16z"
+          ></path>
+          <path
+            fill="none"
+            stroke="#e85050"
+            style={{ stroke: "var(--color1, #e85050)" }}
+            strokeLinejoin="miter"
+            strokeLinecap="butt"
+            strokeMiterlimit="4"
+            strokeWidth="1.1429"
+            d="M31.429 16c0 8.521-6.908 15.429-15.429 15.429s-15.429-6.908-15.429-15.429c0-8.521 6.908-15.429 15.429-15.429s15.429 6.908 15.429 15.429z"
+          ></path>
+          <path
+            fill="none"
+            stroke="#e85050"
+            style={{ stroke: "var(--color1, #e85050)" }}
+            strokeLinejoin="round"
+            strokeLinecap="round"
+            strokeMiterlimit="4"
+            strokeWidth="1.1429"
+            d="M10 12h12"
+          ></path>
+          <path
+            fill="none"
+            stroke="#e85050"
+            style={{ stroke: "var(--color1, #e85050)" }}
+            strokeLinejoin="round"
+            strokeLinecap="round"
+            strokeMiterlimit="4"
+            strokeWidth="1.1429"
+            d="M20.667 12v9.333c0 0.354-0.14 0.693-0.39 0.943s-0.589 0.39-0.943 0.39h-6.667c-0.354 0-0.693-0.14-0.943-0.39s-0.39-0.589-0.39-0.943v-9.333M13.333 12v-1.333c0-0.354 0.14-0.693 0.39-0.943s0.589-0.39 0.943-0.39h2.667c0.354 0 0.693 0.14 0.943 0.39s0.39 0.589 0.39 0.943v1.333"
+          ></path>
+          <path
+            fill="none"
+            stroke="#e85050"
+            style={{ stroke: "var(--color1, #e85050)" }}
+            strokeLinejoin="round"
+            strokeLinecap="round"
+            strokeMiterlimit="4"
+            strokeWidth="1.1429"
+            d="M14.667 15.333v4"
+          ></path>
+          <path
+            fill="none"
+            stroke="#e85050"
+            style={{ stroke: "var(--color1, #e85050)" }}
+            strokeLinejoin="round"
+            strokeLinecap="round"
+            strokeMiterlimit="4"
+            strokeWidth="1.1429"
+            d="M17.333 15.333v4"
+          ></path>
+        </symbol>
       </defs>
     </svg>
   );

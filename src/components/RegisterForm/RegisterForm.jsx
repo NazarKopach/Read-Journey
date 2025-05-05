@@ -26,7 +26,6 @@ const RegisterForm = () => {
 
   const onSubmit = (data) => {
     dispatch(apiRegisterUser(data));
-    console.log(JSON.stringify(data));
     reset();
   };
 

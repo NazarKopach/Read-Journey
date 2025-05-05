@@ -40,7 +40,10 @@ const RecommendedModal = ({
         <p className={styles.recommended_modal_total_page}>{totalPages}</p>
         <button
           className={styles.recommended_modal_button}
-          onClick={() => dispatch(addRecommendedBooks(id))}
+          onClick={async () => {
+            await dispatch(addRecommendedBooks(id)).unwrap();
+            closeModal();
+          }}
         >
           Add to
         </button>

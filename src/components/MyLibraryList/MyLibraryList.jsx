@@ -1,8 +1,13 @@
 import { useState } from "react";
-import styles from "./RecommendedList.module.css";
-import RecommendedModal from "../RecommendedModal/RecommendedModal";
+import styles from "./MyLibraryList.module.css";
+import MyLibraryModal from "../MyLibraryModal/MyLibraryModal";
+import { Icon } from "../Icon/Icon";
+import { useDispatch } from "react-redux";
+import { delRecommendedBooks } from "../../redux/recommendedBooks/operations";
 
-const RecommendedList = ({ items }) => {
+const MyLibraryList = ({ items }) => {
+  const dispatch = useDispatch();
+
   const [selectedBook, setSelectedBook] = useState(null);
   const [visibleCount, setVisibleCount] = useState(10);
 
@@ -40,33 +45,43 @@ const RecommendedList = ({ items }) => {
 
   return (
     <>
-      <ul className={styles.recommended_list}>
+      <ul className={styles.my_library_list}>
         {Array.isArray(items) &&
           items.slice(0, visibleCount).map((book) => (
-            <li
-              key={book._id}
-              className={styles.recommended_list_item}
-              onClick={() => openModal(book)}
-            >
+            <li key={book._id} className={styles.my_library_list_item}>
               <img
                 src={book.imageUrl}
                 alt={book.description}
-                className={styles.recommended_list_img}
+                className={styles.my_library_list_img}
+                onClick={() => openModal(book)}
               />
-              <p className={styles.recommended_list_title}>{book.title}</p>
-              <p className={styles.recommended_list_author}>{book.author}</p>
+              <div className={styles.my_library_list_title_div}>
+                <div>
+                  <p className={styles.my_library_list_title}>{book.title}</p>
+                  <p className={styles.my_library_list_author}>{book.author}</p>
+                </div>
+                <Icon
+                  id="icon-delete"
+                  width="28"
+                  height="28"
+                  onClick={() => dispatch(delRecommendedBooks(book._id))}
+                />
+              </div>
             </li>
           ))}
       </ul>
 
       {Array.isArray(items) && visibleCount < items.length && (
-        <button onClick={handleShowMore} className={styles.show_more_btn}>
+        <button
+          onClick={handleShowMore}
+          className={styles.my_library_show_more_btn}
+        >
           Load more
         </button>
       )}
 
       {selectedBook && (
-        <RecommendedModal
+        <MyLibraryModal
           modalIsOpen={!!selectedBook}
           closeModal={closeModal}
           customStyles={customStyles}
@@ -81,4 +96,4 @@ const RecommendedList = ({ items }) => {
   );
 };
 
-export default RecommendedList;
+export default MyLibraryList;
