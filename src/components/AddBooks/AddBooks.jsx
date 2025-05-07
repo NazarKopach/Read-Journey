@@ -4,7 +4,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useDispatch } from "react-redux";
 import { schemaAddBooks } from "../../utils/schema";
 import { addBooks } from "../../redux/recommendedBooks/operations";
-import { NavLink } from "react-router-dom";
 
 const AddBooks = () => {
   const dispatch = useDispatch();
@@ -25,18 +24,19 @@ const AddBooks = () => {
   };
 
   return (
-    <div>
+    <div className={styles.add_books_div}>
+      <span className={styles.add_books_span}>Create your library:</span>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <div>
           <input
             {...register("title")}
             type="text"
-            className={styles.register_form_input}
-            placeholder="title:"
+            className={styles.add_books_input}
+            placeholder="Book title:"
           />
-          {errors.name && (
-            <p className={styles.register_form_input_error}>
-              {errors.name.message}
+          {errors.title && (
+            <p className={styles.add_books_input_error}>
+              {errors.title.message}
             </p>
           )}
         </div>
@@ -44,34 +44,31 @@ const AddBooks = () => {
           <input
             {...register("author")}
             type="text"
-            className={styles.register_form_input}
-            placeholder="author:"
+            className={styles.add_books_input}
+            placeholder="The author:"
           />
-          {errors.email && (
-            <p className={styles.register_form_input_error}>
-              {errors.email.message}
+          {errors.author && (
+            <p className={styles.add_books_input_error}>
+              {errors.author.message}
             </p>
           )}
         </div>
-        <div className={styles.register_form_input_password_div}>
+        <div>
           <input
-            {...register("pages")}
+            {...register("totalPages")}
             type="text"
-            className={styles.register_form_input}
+            className={styles.add_books_input}
             placeholder="Number of pages:"
           />
         </div>
-        {errors.password && (
-          <p className={styles.register_form_input_error}>
-            {errors.password.message}
+        {errors.totalPages && (
+          <p className={styles.add_books_input_error}>
+            {errors.totalPages.message}
           </p>
         )}
-        <button className={styles.register_form_btn} type="submit">
-          Registration
+        <button className={styles.add_books_btn} type="submit">
+          Add books
         </button>
-        <NavLink className={styles.register_form_link} to="/login">
-          Already have an account?
-        </NavLink>
       </form>
     </div>
   );

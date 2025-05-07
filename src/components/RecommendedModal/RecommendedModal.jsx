@@ -33,7 +33,7 @@ const RecommendedModal = ({
         />
       </div>
 
-      <li key={id} className={styles.recommended_modal_div}>
+      <li className={styles.recommended_modal_div}>
         <img src={img} className={styles.recommended_modal_img} />
         <p className={styles.recommended_modal_title}>{title}</p>
         <p className={styles.recommended_modal_author}>{author}</p>

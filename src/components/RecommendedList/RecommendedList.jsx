@@ -4,11 +4,6 @@ import RecommendedModal from "../RecommendedModal/RecommendedModal";
 
 const RecommendedList = ({ items }) => {
   const [selectedBook, setSelectedBook] = useState(null);
-  const [visibleCount, setVisibleCount] = useState(10);
-
-  const handleShowMore = () => {
-    setVisibleCount((prev) => prev + 10);
-  };
 
   const customStyles = {
     overlay: {
@@ -42,7 +37,7 @@ const RecommendedList = ({ items }) => {
     <>
       <ul className={styles.recommended_list}>
         {Array.isArray(items) &&
-          items.slice(0, visibleCount).map((book) => (
+          items.map((book) => (
             <li
               key={book._id}
               className={styles.recommended_list_item}
@@ -58,12 +53,6 @@ const RecommendedList = ({ items }) => {
             </li>
           ))}
       </ul>
-
-      {Array.isArray(items) && visibleCount < items.length && (
-        <button onClick={handleShowMore} className={styles.show_more_btn}>
-          Load more
-        </button>
-      )}
 
       {selectedBook && (
         <RecommendedModal

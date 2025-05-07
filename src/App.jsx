@@ -40,7 +40,7 @@ function App() {
   return (
     <div>
       <SvgSprite />
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loader />}>
         <Routes>
           <Route
             path="/login"

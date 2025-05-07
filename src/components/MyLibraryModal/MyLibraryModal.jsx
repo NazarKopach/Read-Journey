@@ -1,8 +1,7 @@
 import ReactModal from "react-modal";
 import styles from "./MyLibraryModal.module.css";
 import { Icon } from "../Icon/Icon";
-import { useDispatch } from "react-redux";
-import { addRecommendedBooks } from "../../redux/recommendedBooks/operations";
+import { useNavigate } from "react-router-dom";
 
 const MyLibraryModal = ({
   modalIsOpen,
@@ -14,7 +13,16 @@ const MyLibraryModal = ({
   totalPages,
   id,
 }) => {
-  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleStartReading = () => {
+    try {
+      closeModal();
+      navigate(`/reading`, id);
+    } catch (error) {
+      console.error("Failed to start reading:", error);
+    }
+  };
 
   return (
     <ReactModal
@@ -33,14 +41,14 @@ const MyLibraryModal = ({
         />
       </div>
 
-      <li key={id} className={styles.my_library_modal_div}>
+      <li className={styles.my_library_modal_div}>
         <img src={img} className={styles.my_library_modal_img} />
         <p className={styles.my_library_modal_title}>{title}</p>
         <p className={styles.my_library_modal_author}>{author}</p>
         <p className={styles.my_library_modal_total_page}>{totalPages}</p>
         <button
           className={styles.my_library_modal_button}
-          onClick={() => dispatch(addRecommendedBooks(id))}
+          onClick={handleStartReading}
         >
           Start reading
         </button>

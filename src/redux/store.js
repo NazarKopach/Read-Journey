@@ -14,6 +14,7 @@ import {
   REGISTER,
 } from "redux-persist";
 import { recommendedBooksReducer } from "./recommendedBooks/slice";
+import { userReadingBooksReducer } from "./userReading/slice";
 
 const authConfig = {
   key: "auth",
@@ -27,6 +28,7 @@ export const store = configureStore({
     books: booksReducer,
     filters: filtersReducer,
     recBooks: recommendedBooksReducer,
+    userRading: userReadingBooksReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

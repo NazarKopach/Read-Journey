@@ -5,7 +5,7 @@ const booksSlice = createSlice({
   name: "books",
   initialState: {
     items: [],
-    loading: false,
+    isLoading: false,
     error: null,
     page: 1,
     totalPages: 1,
@@ -18,16 +18,16 @@ const booksSlice = createSlice({
   extraReducers: (builder) =>
     builder
       .addCase(fetchBooks.pending, (state) => {
-        state.loading = true;
+        state.isLoading = true;
         state.error = null;
       })
       .addCase(fetchBooks.fulfilled, (state, action) => {
-        state.loading = false;
+        state.isLoading = false;
         state.items = action.payload;
         state.totalPages = action.payload.totalPages;
       })
       .addCase(fetchBooks.rejected, (state, action) => {
-        state.loading = false;
+        state.isLoading = false;
         state.error = action.payload;
       }),
 });

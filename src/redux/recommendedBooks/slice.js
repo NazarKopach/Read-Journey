@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {
+  addBooks,
   addRecommendedBooks,
   delRecommendedBooks,
   userRecommendedBooks,
@@ -57,6 +58,18 @@ const recommendedBooksSlice = createSlice({
         );
       })
       .addCase(delRecommendedBooks.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
+      .addCase(addBooks.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(addBooks.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.userBooks.push(action.payload);
+      })
+      .addCase(addBooks.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
       });

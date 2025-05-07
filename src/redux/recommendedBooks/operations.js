@@ -13,20 +13,6 @@ export const addRecommendedBooks = createAsyncThunk(
   }
 );
 
-export const addBooks = createAsyncThunk(
-  "books/addBooks",
-  async ({ title, author, totalPages }, thunkApi) => {
-    try {
-      const { data } = await authInstance.post("/books/add", {
-        params: { title, author, totalPages },
-      });
-      return data;
-    } catch (error) {
-      return thunkApi.rejectWithValue(error.message);
-    }
-  }
-);
-
 export const delRecommendedBooks = createAsyncThunk(
   "books/delRecommendedBooks",
   async (_id, thunkApi) => {
@@ -44,6 +30,23 @@ export const userRecommendedBooks = createAsyncThunk(
   async (_, thunkApi) => {
     try {
       const { data } = await authInstance.get("/books/own");
+      return data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const addBooks = createAsyncThunk(
+  "books/addBooks",
+  async ({ title, author, totalPages }, thunkApi) => {
+    try {
+      const { data } = await authInstance.post("/books/add", {
+        title,
+        author,
+        totalPages,
+      });
+      console.log(data);
       return data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);

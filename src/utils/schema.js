@@ -30,5 +30,10 @@ export const schemaRegister = yup.object().shape({
 export const schemaAddBooks = yup.object().shape({
   title: yup.string().required("Title is required"),
   author: yup.string().required("Author is required"),
-  pages: yup.string().required("Pages is required"),
+  totalPages: yup
+    .number()
+    .typeError("Must be a number")
+    .positive("Pages must be greater than 0")
+    .integer("Pages must be an integer")
+    .required("Pages is required"),
 });
