@@ -1,39 +1,58 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { startReadingBooks } from "./operations";
+import {
+  fetchReadingBooksId,
+  finishReadingBooks,
+  startReadingBooks,
+} from "./operations";
 
 const initialState = {
-  userReading: [],
+  userBooks: [],
   isLoading: false,
   error: null,
 };
 
 const userReadingBooksSlice = createSlice({
-  name: "userReading",
+  name: "userBooks",
   initialState,
-  reducers: {
-    resetRecommendedBooks: (state) => {
-      state.userBooks = [];
-      state.error = null;
-      state.isLoading = false;
-    },
-  },
   extraReducers: (builder) => {
     builder
       .addCase(startReadingBooks.pending, (state) => {
         state.isLoading = true;
         state.error = null;
       })
-      .addCase(startReadingBooks.fulfilled, (state) => {
+      .addCase(startReadingBooks.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.userBooks;
+        state.userBooks = action.payload;
       })
       .addCase(startReadingBooks.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload || "Something went wrong";
+      })
+      .addCase(finishReadingBooks.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(finishReadingBooks.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.userBooks = action.payload;
+      })
+      .addCase(finishReadingBooks.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload || "Something went wrong";
+      })
+      .addCase(fetchReadingBooksId.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(fetchReadingBooksId.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.userBooks = action.payload;
+      })
+      .addCase(fetchReadingBooksId.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload || "Something went wrong";
       });
   },
 });
-
-export const { resetRecommendedBooks } = userReadingBooksSlice.actions;
 
 export const userReadingBooksReducer = userReadingBooksSlice.reducer;

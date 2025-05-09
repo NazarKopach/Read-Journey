@@ -28,7 +28,7 @@ export const store = configureStore({
     books: booksReducer,
     filters: filtersReducer,
     recBooks: recommendedBooksReducer,
-    userRading: userReadingBooksReducer,
+    userReading: userReadingBooksReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

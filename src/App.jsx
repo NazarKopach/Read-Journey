@@ -50,12 +50,11 @@ function App() {
             path="/register"
             element={<RestrictedRoute component={<RegisterPage />} />}
           />
-
-          <Route path="/" element={<PrivateRoute component={<Dashboard />} />}>
-            <Route element={<MainLayout />}>
+          <Route path="/" element={<PrivateRoute component={<MainLayout />} />}>
+            <Route element={<Dashboard />}>
               <Route path="library" element={<MyLibraryPage />} />
-              <Route path="reading" element={<ReadingPage />} />
               <Route path="recommended" element={<RecommendedPage />} />
+              <Route path="reading/:id" element={<ReadingPage />} />
             </Route>
             <Route path="*" element={<NotFoundPage />} />
           </Route>

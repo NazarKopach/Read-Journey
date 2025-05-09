@@ -37,3 +37,12 @@ export const schemaAddBooks = yup.object().shape({
     .integer("Pages must be an integer")
     .required("Pages is required"),
 });
+
+export const schemaStartFinishReading = yup.object().shape({
+  page: yup
+    .number()
+    .typeError("Must be a number")
+    .positive("Page must be greater than 0")
+    .integer("Page must be an integer")
+    .required("Page is required"),
+});

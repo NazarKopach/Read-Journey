@@ -18,7 +18,7 @@ const MyLibraryModal = ({
   const handleStartReading = () => {
     try {
       closeModal();
-      navigate(`/reading`, id);
+      navigate(`/reading/${id}`);
     } catch (error) {
       console.error("Failed to start reading:", error);
     }
