@@ -31,6 +31,20 @@ export const finishReadingBooks = createAsyncThunk(
   }
 );
 
+export const deleteReadingBooksId = createAsyncThunk(
+  "reading/delete",
+  async ({ bookId, readingId }, thunkApi) => {
+    try {
+      const { data } = await authInstance.delete(
+        `/books/reading?bookId=${bookId}&readingId=${readingId}`
+      );
+      return data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
+    }
+  }
+);
+
 export const fetchReadingBooksId = createAsyncThunk(
   "reading/bookId",
   async (id, thunkApi) => {

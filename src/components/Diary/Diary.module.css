@@ -7,7 +7,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .diary_title {
@@ -26,8 +26,9 @@
 .diary_grafic_div {
   border-radius: 12px;
   width: 313px;
-  min-height: 373px;
+  height: 373px;
   background: #262626;
+  padding: 20px;
 }
 
 .diary_data {
@@ -42,6 +43,7 @@
 
 .diary_list {
   list-style: none;
+  padding: 0;
 }
 
 .diary_icon_div {
@@ -58,4 +60,55 @@
   text-align: center;
   color: #686868;
   margin-left: 86px;
+}
+
+.diary_info_div {
+  display: flex;
+}
+
+.diary_duration {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 117%;
+  letter-spacing: -0.02em;
+  color: #686868;
+}
+
+.diary_percentage {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  color: #f9f9f9;
+}
+
+.diary_percentage_div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-left: 30px;
+  margin-top: 28px;
+}
+
+.diary_speed_div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-left: 105px;
+}
+
+.diary_speed {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 117%;
+  letter-spacing: -0.02em;
+  color: #686868;
+}
+
+.diary_icon_delete {
+  cursor: pointer;
 }

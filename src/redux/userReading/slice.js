@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {
+  deleteReadingBooksId,
   fetchReadingBooksId,
   finishReadingBooks,
   startReadingBooks,
@@ -49,6 +50,18 @@ const userReadingBooksSlice = createSlice({
         state.userBooks = action.payload;
       })
       .addCase(fetchReadingBooksId.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload || "Something went wrong";
+      })
+      .addCase(deleteReadingBooksId.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(deleteReadingBooksId.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.userBooks = action.payload;
+      })
+      .addCase(deleteReadingBooksId.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload || "Something went wrong";
       });
