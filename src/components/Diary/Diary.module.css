@@ -1,5 +1,5 @@
 .diary_div {
-  display: flex;
+  display: none;
   flex-direction: column;
 }
 

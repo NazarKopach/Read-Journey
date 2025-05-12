@@ -5,6 +5,7 @@ import Progress from "../../components/Progress/Progress";
 import StartReading from "../../components/StartReading/StartReading";
 import styles from "./ReadingPage.module.css";
 import { selectUserReadingBooks } from "../../redux/userReading/selectors";
+import Statistics from "../../components/Statistics/Statistics";
 
 const ReadingPage = () => {
   const book = useSelector(selectUserReadingBooks);
@@ -14,7 +15,8 @@ const ReadingPage = () => {
     <div className={styles.reading_page_div}>
       <div className={styles.add_reading_dashboard}>
         <StartReading />
-        {bookProgress.length > 1 ? <Diary /> : <Progress />}
+        {bookProgress.length > 0 ? <Diary /> : <Progress />}
+        <Statistics />
       </div>
       <AddReading />;
     </div>

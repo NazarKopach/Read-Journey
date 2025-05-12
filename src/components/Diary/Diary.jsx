@@ -45,48 +45,53 @@ const Diary = () => {
       <div className={styles.diary_grafic_div}>
         <ul className={styles.diary_list}>
           {Array.isArray(bookProgress) &&
-            bookProgress.slice(0, 3).map((item) => {
-              const pagesRead = item.finishPage - item.startPage;
-              const duration = formatDuration(
-                item.startReading,
-                item.finishReading
-              );
-              const percentage = calculatePercentage(pagesRead);
-              const readingId = item._id;
+            bookProgress
+              .filter((item) => item.status === "inactive")
+              .slice(0, 3)
+              .map((item) => {
+                const pagesRead = item.finishPage - item.startPage;
+                const duration = formatDuration(
+                  item.startReading,
+                  item.finishReading
+                );
+                const percentage = calculatePercentage(pagesRead);
+                const readingId = item._id;
 
-              return (
-                <li key={item._id}>
-                  <div className={styles.diary_icon_div}>
-                    <Icon id="icon-diary-list" width="20" height="20" />
-                    <p className={styles.diary_data}>
-                      {new Date(item.finishReading).toLocaleDateString()}
-                    </p>
-                    <p className={styles.diary_pages}>{pagesRead} pages</p>
-                  </div>
-                  <div className={styles.diary_info_div}>
-                    <div className={styles.diary_percentage_div}>
-                      <p className={styles.diary_percentage}>{percentage}%</p>
-                      <p className={styles.diary_duration}>{duration}</p>
-                    </div>
-                    <div className={styles.diary_speed_div}>
-                      <Icon id="icon-graphic" width="59" height="25" />
-                      <Icon
-                        id="icon-trash-2"
-                        width="14"
-                        height="14"
-                        onClick={() =>
-                          dispatch(deleteReadingBooksId({ bookId, readingId }))
-                        }
-                        className={styles.diary_icon_delete}
-                      />
-                      <p className={styles.diary_speed}>
-                        {item.speed} pages/hour
+                return (
+                  <li key={item._id}>
+                    <div className={styles.diary_icon_div}>
+                      <Icon id="icon-diary-list" width="20" height="20" />
+                      <p className={styles.diary_data}>
+                        {new Date(item.finishReading).toLocaleDateString()}
                       </p>
+                      <p className={styles.diary_pages}>{pagesRead} pages</p>
                     </div>
-                  </div>
-                </li>
-              );
-            })}
+                    <div className={styles.diary_info_div}>
+                      <div className={styles.diary_percentage_div}>
+                        <p className={styles.diary_percentage}>{percentage}%</p>
+                        <p className={styles.diary_duration}>{duration}</p>
+                      </div>
+                      <div className={styles.diary_speed_div}>
+                        <Icon id="icon-graphic" width="59" height="25" />
+                        <Icon
+                          id="icon-trash-2"
+                          width="14"
+                          height="14"
+                          onClick={() =>
+                            dispatch(
+                              deleteReadingBooksId({ bookId, readingId })
+                            )
+                          }
+                          className={styles.diary_icon_delete}
+                        />
+                        <p className={styles.diary_speed}>
+                          {item.speed} pages/hour
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                );
+              })}
         </ul>
       </div>
     </div>
