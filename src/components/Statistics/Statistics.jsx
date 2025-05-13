@@ -1,28 +1,13 @@
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-
 import styles from "./Statistics.module.css";
 import { useSelector } from "react-redux";
 import { selectUserReadingBooks } from "../../redux/userReading/selectors";
+import { useReadingStats } from "../../hooks/useReadingStats";
 
 const Statistics = () => {
   const book = useSelector(selectUserReadingBooks);
-  const bookProgress = book?.progress || [];
-  const totalPages = book?.totalPages || 1;
-
-  const calculatePercentage = (pagesRead) => {
-    return parseFloat(((pagesRead / totalPages) * 100).toFixed(1));
-  };
-
-  const totalPagesRead = bookProgress.reduce((acc, item) => {
-    const pages = item.finishPage - item.startPage;
-    return acc + pages;
-  }, 0);
-
-  const safePagesRead = Math.min(totalPagesRead, totalPages);
-  const percentage = calculatePercentage(safePagesRead);
-  const readSpeed =
-    bookProgress.length > 0 ? bookProgress[bookProgress.length - 1].speed : 0;
+  const { totalPagesRead, percentage, readSpeed } = useReadingStats(book);
 
   return (
     <div className={styles.statistics_div}>

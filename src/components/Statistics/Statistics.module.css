@@ -1,4 +1,26 @@
 .statistics_div {
+  display: flex;
+  flex-direction: column;
+}
+
+.statistics_title_div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.statistics_title {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  color: #f9f9f9;
+}
+
+.statistics_icon {
+  margin-left: 8px;
+  cursor: pointer;
 }
 
 .statistics_graphic_div {
@@ -15,7 +37,6 @@
   line-height: 129%;
   letter-spacing: -0.02em;
   color: #686868;
-  margin-top: 20px;
   margin-bottom: 20px;
 }
 

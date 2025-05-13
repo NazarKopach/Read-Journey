@@ -8,6 +8,7 @@ import { userRecommendedBooks } from "../../redux/recommendedBooks/operations";
 const MyLibraryBooks = () => {
   const dispatch = useDispatch();
   const userBooks = useSelector(userSelectBooksState);
+  console.log(userBooks);
 
   useEffect(() => {
     dispatch(userRecommendedBooks());
@@ -18,7 +19,9 @@ const MyLibraryBooks = () => {
       <div className={styles.my_library_books_select_div}>
         <h1 className={styles.my_library_books_title}>My library</h1>
         <select className={styles.my_library_books_select}>
-          <option>All books</option>
+          <option></option>
+          <option></option>
+          <option></option>
         </select>
       </div>
 

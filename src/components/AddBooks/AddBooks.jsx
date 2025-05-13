@@ -4,9 +4,37 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useDispatch } from "react-redux";
 import { schemaAddBooks } from "../../utils/schema";
 import { addBooks } from "../../redux/recommendedBooks/operations";
+import AddBookModal from "../AddBookModal/AddBookModal";
+import { useState } from "react";
+
+const customStyles = {
+  overlay: {
+    backgroundColor: "rgba(20, 20, 20, 0.6)",
+  },
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+    border: "1px solid rgba(104, 104, 104, 0.2)",
+    borderRadius: "12px",
+    width: "342px",
+    height: "308px",
+    background: "#1f1f1f",
+    overflow: "hidden",
+  },
+};
 
 const AddBooks = () => {
   const dispatch = useDispatch();
+
+  const [modalIsOpen, setIsOpen] = useState(false);
+
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   const {
     register,
@@ -19,7 +47,7 @@ const AddBooks = () => {
 
   const onSubmit = (data) => {
     dispatch(addBooks(data));
-    console.log(JSON.stringify(data));
+    setIsOpen(true);
     reset();
   };
 
@@ -70,6 +98,11 @@ const AddBooks = () => {
           Add books
         </button>
       </form>
+      <AddBookModal
+        modalIsOpen={modalIsOpen}
+        closeModal={closeModal}
+        customStyles={customStyles}
+      />
     </div>
   );
 };

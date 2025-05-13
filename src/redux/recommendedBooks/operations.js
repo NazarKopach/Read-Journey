@@ -46,7 +46,6 @@ export const addBooks = createAsyncThunk(
         author,
         totalPages,
       });
-      console.log(data);
       return data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
