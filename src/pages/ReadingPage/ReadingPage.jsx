@@ -5,7 +5,6 @@ import StartReading from "../../components/StartReading/StartReading";
 import styles from "./ReadingPage.module.css";
 import { selectUserReadingBooks } from "../../redux/userReading/selectors";
 import MainViewDiary from "../../components/MainViewDiary/MainViewDiary";
-import FinishReadModal from "../../components/FinishReadModal/FinishReadModal";
 
 const ReadingPage = () => {
   const book = useSelector(selectUserReadingBooks);

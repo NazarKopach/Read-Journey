@@ -34,29 +34,27 @@ const AddReading = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { id } = useParams();
-  const items = useSelector(selectUserReadingBooks);
-  const [status, setStatus] = useState("");
   const book = useSelector(selectUserReadingBooks);
-  const { percentage } = useReadingStats(book);
+  let statuses = book.status;
+  const [status, setStatus] = useState(statuses);
+  const [modalIsOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     dispatch(fetchReadingBooksId(id));
   }, [dispatch, id]);
 
   useEffect(() => {
-    if (items?.progress?.length > 0) {
-      const lastProgress = items.progress[items.progress.length - 1];
+    if (book?.progress?.length > 0) {
+      const lastProgress = book.progress[book.progress.length - 1];
       setStatus(lastProgress.status);
     }
-  }, [items]);
-
-  const [modalIsOpen, setIsOpen] = useState(false);
+  }, [book]);
 
   useEffect(() => {
-    if (percentage === 100 && !modalIsOpen) {
+    if (status === "done") {
       setIsOpen(true);
     }
-  }, [percentage]);
+  }, [status]);
 
   async function closeModal() {
     try {
@@ -71,15 +69,15 @@ const AddReading = () => {
   return (
     <div className={styles.add_reading_div}>
       <h2 className={styles.add_reading_h2}>My reading</h2>
-      {items ? (
+      {book ? (
         <div className={styles.add_readin_card_div}>
           <img
             className={styles.add_readin_img}
-            src={items.imageUrl}
-            alt={items.title}
+            src={book.imageUrl}
+            alt={book.title}
           />
-          <p className={styles.add_readin_title}>{items.title}</p>
-          <p className={styles.add_readin_author}>{items.author}</p>
+          <p className={styles.add_readin_title}>{book.title}</p>
+          <p className={styles.add_readin_author}>{book.author}</p>
           <Icon
             id={status === "active" ? "icon-block-1" : "icon-block"}
             width="50"

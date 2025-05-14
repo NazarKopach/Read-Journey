@@ -74,14 +74,19 @@
   color: #1f1f1f;
 }
 
+.login_form_btn:hover {
+  background-color: transparent;
+  color: #f9f9f9;
+  border: 1px solid #f9f9f9;
+}
+
 .login_form_input_error {
-  font-family: var(--font-family);
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 117%;
-  letter-spacing: -0.02em;
   color: #e90516;
   margin: 0;
+}
+
+.inputError {
+  border: 1px solid red;
 }
 
 .login_form_link {
@@ -93,6 +98,10 @@
   text-decoration: underline;
   text-decoration-skip-ink: none;
   color: #686868;
+}
+
+.login_form_link:hover {
+  color: #f9f9f9;
 }
 
 /* tablet */
@@ -128,7 +137,7 @@
     line-height: 100%;
     width: 225px;
     height: 52px;
-    margin-top: 132px;
+    margin-top: 100px;
     margin-right: 20px;
   }
 

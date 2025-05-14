@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { Icon } from "../Icon/Icon";
 import styles from "./LoginForm.module.css";
-
+import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useEffect, useState } from "react";
@@ -24,9 +24,13 @@ const LoginForm = () => {
     resolver: yupResolver(schemaLogin),
   });
 
-  const onSubmit = (data) => {
-    dispatch(apiLoginUser(data));
-    reset();
+  const onSubmit = async (data) => {
+    try {
+      await dispatch(apiLoginUser(data)).unwrap();
+      reset();
+    } catch {
+      toast.error("Login failed");
+    }
   };
 
   useEffect(() => {
@@ -46,7 +50,7 @@ const LoginForm = () => {
         <Icon id="icon-Logo-2" width="182" height="17" />
       )}
       <h1 className={styles.login_form_title}>
-        Expand your mind, reading
+        Expand your mind, reading{" "}
         <span className={styles.login_form_span}>a book</span>
       </h1>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
@@ -54,7 +58,9 @@ const LoginForm = () => {
           <input
             {...register("email")}
             type="text"
-            className={styles.login_form_input}
+            className={`${styles.login_form_input} ${
+              errors.email ? styles.inputError : ""
+            }`}
             placeholder="Email:"
           />
           {errors.email && (
@@ -74,7 +80,9 @@ const LoginForm = () => {
           <input
             {...register("password")}
             type={showPassword ? "text" : "password"}
-            className={styles.login_form_input}
+            className={`${styles.login_form_input} ${
+              errors.password ? styles.inputError : ""
+            }`}
             placeholder="Password:"
           />
         </div>

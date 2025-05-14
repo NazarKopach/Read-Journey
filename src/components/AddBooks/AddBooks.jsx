@@ -48,7 +48,7 @@ const AddBooks = () => {
   const onSubmit = (data) => {
     dispatch(addBooks(data));
     setIsOpen(true);
-    reset();
+    setTimeout(() => reset(), 300);
   };
 
   return (

@@ -1,6 +1,7 @@
 .statistics_div {
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
 }
 
 .statistics_title_div {

@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { schemaRegister } from "../../utils/schema";
 import { useDispatch } from "react-redux";
 import { apiRegisterUser } from "../../redux/auth/operations";
+import { toast } from "react-toastify";
 
 const RegisterForm = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -24,9 +25,13 @@ const RegisterForm = () => {
     resolver: yupResolver(schemaRegister),
   });
 
-  const onSubmit = (data) => {
-    dispatch(apiRegisterUser(data));
-    reset();
+  const onSubmit = async (data) => {
+    try {
+      await dispatch(apiRegisterUser(data)).unwrap();
+      reset();
+    } catch {
+      toast.error("Registration failed, please try again");
+    }
   };
 
   useEffect(() => {
@@ -54,7 +59,9 @@ const RegisterForm = () => {
           <input
             {...register("name")}
             type="text"
-            className={styles.register_form_input}
+            className={`${styles.register_form_input} ${
+              errors.name ? styles.inputError : ""
+            }`}
             placeholder="Name:"
           />
           {errors.name && (
@@ -67,7 +74,9 @@ const RegisterForm = () => {
           <input
             {...register("email")}
             type="text"
-            className={styles.register_form_input}
+            className={`${styles.register_form_input} ${
+              errors.email ? styles.inputError : ""
+            }`}
             placeholder="Email:"
           />
           {errors.email && (
@@ -87,7 +96,9 @@ const RegisterForm = () => {
           <input
             {...register("password")}
             type={showPassword ? "text" : "password"}
-            className={styles.register_form_input}
+            className={`${styles.register_form_input} ${
+              errors.password ? styles.inputError : ""
+            }`}
             placeholder="Password:"
           />
         </div>

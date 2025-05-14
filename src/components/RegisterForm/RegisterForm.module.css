@@ -47,6 +47,10 @@
   padding-left: 10px;
 }
 
+.inputError {
+  border: 1px solid red;
+}
+
 .register_form_input_password_div {
   position: relative;
   max-width: 472px;
@@ -74,6 +78,12 @@
   color: #1f1f1f;
 }
 
+.register_form_btn:hover {
+  background-color: #141414;
+  color: #f9f9f9;
+  border: 1px solid #f9f9f9;
+}
+
 .register_form_input_error {
   font-family: var(--font-family);
   font-weight: 500;
@@ -95,6 +105,9 @@
   color: #686868;
 }
 
+.register_form_link:hover {
+  color: #f9f9f9;
+}
 /* tablet */
 
 @media (min-width: 768px) {

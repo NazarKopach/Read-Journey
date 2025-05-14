@@ -1,7 +1,6 @@
-import AddBooks from "../../components/addBooks/addBooks";
+import AddBooks from "../../components/AddBooks/AddBooks";
 import MyLibraryBooks from "../../components/MylibaryBooks/MylibraryBooks";
 import MyLibraryRecommended from "../../components/MyLibraryRecommended/MyLIbraryRecommended";
-import RecommendedBook from "../../components/RecommendedBook/RecommendedBook";
 
 import styles from "./MyLibraryPage.module.css";
 

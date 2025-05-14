@@ -40,12 +40,13 @@
   color: #f9f9f9;
 }
 
+.add_books_btn:hover {
+  background-color: #f9f9f9;
+  color: #262626;
+}
+
 .add_books_input_error {
-  font-family: var(--font-family);
-  font-weight: 500;
   font-size: 12px;
-  line-height: 117%;
-  letter-spacing: -0.02em;
   color: #e90516;
   margin: 0;
 }

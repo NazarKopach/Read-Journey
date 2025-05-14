@@ -6,6 +6,7 @@
   width: 313px;
   min-height: 259px;
   background: #262626;
+  margin-bottom: 20px;
 }
 
 .recommended_book_title {
@@ -77,6 +78,10 @@
   text-decoration: underline;
   text-decoration-skip-ink: none;
   color: #686868;
+}
+
+.my_library_recommended_link:hover {
+  color: #f9f9f9;
 }
 
 .my_library_recommended_icon {

@@ -27,9 +27,10 @@ export const delRecommendedBooks = createAsyncThunk(
 
 export const userRecommendedBooks = createAsyncThunk(
   "books/userRecommendedBooks",
-  async (_, thunkApi) => {
+  async ({ status }, thunkApi) => {
     try {
-      const { data } = await authInstance.get("/books/own");
+      const config = status ? { params: { status } } : {};
+      const { data } = await authInstance.get("/books/own", config);
       return data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
