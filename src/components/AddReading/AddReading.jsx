@@ -8,7 +8,6 @@ import { Icon } from "../Icon/Icon";
 import Loader from "../Loader/Loader";
 import FinishReadModal from "../FinishReadModal/FinishReadModal";
 import { delRecommendedBooks } from "../../redux/recommendedBooks/operations";
-import { useReadingStats } from "../../hooks/useReadingStats";
 
 const customStyles = {
   overlay: {
@@ -35,8 +34,8 @@ const AddReading = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const book = useSelector(selectUserReadingBooks);
-  let statuses = book.status;
-  const [status, setStatus] = useState(statuses);
+
+  const [status, setStatus] = useState("");
   const [modalIsOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -51,10 +50,10 @@ const AddReading = () => {
   }, [book]);
 
   useEffect(() => {
-    if (status === "done") {
+    if (book.status === "done") {
       setIsOpen(true);
     }
-  }, [status]);
+  }, [book]);
 
   async function closeModal() {
     try {
