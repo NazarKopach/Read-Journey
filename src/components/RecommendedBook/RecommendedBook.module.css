@@ -1,20 +1,18 @@
 .recommended_book_div {
   border-radius: 30px;
-  width: 847px;
-  height: 651px;
+  width: 335px;
+  height: 382px;
   background: #1f1f1f;
-  padding: 40px 40px 0;
+  padding: 20px 20px 0;
 }
 
 .recommended_book_title {
   font-family: var(--font-family);
-  font-weight: 700;
-  font-size: 28px;
-  line-height: 114%;
-  letter-spacing: 0.02em;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: -0.02em;
   color: #f9f9f9;
-  width: 201px;
-  height: 32px;
   margin: 0;
 }
 
@@ -27,10 +25,14 @@
 .recommended_book_icon_left {
   margin-right: 8px;
   cursor: pointer;
+  width: 32px;
+  height: 32px;
 }
 
 .recommended_book_icon_right {
   cursor: pointer;
+  width: 32px;
+  height: 32px;
 }
 
 .recommended_books_error {
@@ -38,4 +40,38 @@
   font-weight: 700;
   font-size: 16px;
   color: red;
+}
+
+/*  Tablet */
+
+@media (min-width: 768px) {
+  .recommended_book_div {
+    width: 704px;
+    height: 663px;
+    padding: 40px 40px 0;
+  }
+
+  .recommended_book_title {
+    font-weight: 700;
+    font-size: 20px;
+  }
+}
+
+/*  Desktop */
+
+@media (min-width: 1440px) {
+  .recommended_book_div {
+    width: 847px;
+    max-height: 651px;
+  }
+
+  .recommended_book_icon_left {
+    width: 40px;
+    height: 40px;
+  }
+
+  .recommended_book_icon_right {
+    width: 40px;
+    height: 40px;
+  }
 }

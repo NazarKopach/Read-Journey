@@ -42,15 +42,11 @@ const RecommendedBook = () => {
         <div>
           <Icon
             id={page > 1 ? "icon-Frame-33" : "icon-Frame-32"}
-            width="40"
-            height="40"
             className={styles.recommended_book_icon_left}
             onClick={() => changePage("prev")}
           />
           <Icon
             id={page < totalPages ? "icon-Frame-34" : "icon-Frame-35"}
-            width="40"
-            height="40"
             onClick={() => changePage("next")}
             className={styles.recommended_book_icon_right}
           />

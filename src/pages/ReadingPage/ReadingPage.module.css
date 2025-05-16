@@ -1,6 +1,8 @@
 .reading_page_div {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 16px;
   margin-top: 16px;
 }
@@ -9,8 +11,41 @@
   display: flex;
   flex-direction: column;
   border-radius: 30px;
-  width: 353px;
-  min-height: 651px;
+  width: 335px;
+  min-height: 390px;
   background: #1f1f1f;
   padding: 40px 20px 0;
+}
+
+/*  Tablet */
+
+@media (min-width: 768px) {
+  .add_reading_dashboard {
+    flex-direction: row;
+    gap: 20px;
+    width: 704px;
+    min-height: 518px;
+  }
+}
+
+/*  Desktop */
+
+@media (min-width: 1440px) {
+  .reading_page_div {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .add_reading_dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-radius: 30px;
+    width: 353px;
+    min-height: 478px;
+    background: #1f1f1f;
+    padding: 40px 20px 0;
+  }
 }

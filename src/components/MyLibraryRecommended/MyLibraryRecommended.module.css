@@ -1,10 +1,10 @@
 .my_library_recommended {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 20px 20px 0 20px;
   border-radius: 12px;
   width: 313px;
-  min-height: 259px;
+  min-height: 244px;
   background: #262626;
   margin-bottom: 20px;
 }
@@ -86,4 +86,17 @@
 
 .my_library_recommended_icon {
   cursor: pointer;
+}
+
+/*  Tablet */
+
+@media (min-width: 768px) {
+  .my_library_recommended {
+    padding: 20px;
+    margin: 0;
+  }
+
+  .my_library_recommended {
+    min-height: 259px;
+  }
 }

@@ -26,6 +26,7 @@ const MyLibraryBooks = () => {
       fontSize: "16px",
       cursor: "pointer",
       minWidth: "153px",
+      border: "none",
     }),
     singleValue: (base) => ({
       ...base,

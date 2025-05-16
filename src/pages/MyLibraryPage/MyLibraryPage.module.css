@@ -1,6 +1,8 @@
 .my_library_page_div {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 16px;
   margin-top: 16px;
 }
@@ -11,6 +13,32 @@
   align-items: center;
   border-radius: 30px;
   width: 353px;
-  min-height: 651px;
+  min-height: 528px;
   background: #1f1f1f;
+}
+
+/*  Tablet */
+
+@media (min-width: 768px) {
+  .my_library_dashboard {
+    flex-direction: row;
+    width: 704px;
+    min-height: 336px;
+  }
+}
+
+/*  Desktop */
+
+@media (min-width: 1440px) {
+  .my_library_page_div {
+    flex-direction: row;
+    align-items: start;
+  }
+
+  .my_library_dashboard {
+    flex-direction: column;
+    width: 353px;
+    min-height: 651px;
+    padding-bottom: 20px;
+  }
 }

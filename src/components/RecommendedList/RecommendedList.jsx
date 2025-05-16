@@ -1,8 +1,10 @@
 import { useState } from "react";
 import styles from "./RecommendedList.module.css";
 import RecommendedModal from "../RecommendedModal/RecommendedModal";
+import { useIsMobile } from "../../hooks/useIsMobile";
 
 const RecommendedList = ({ items }) => {
+  const isMobile = useIsMobile();
   const [selectedBook, setSelectedBook] = useState(null);
 
   const customStyles = {
@@ -18,8 +20,8 @@ const RecommendedList = ({ items }) => {
       transform: "translate(-50%, -50%)",
       border: "1px solid rgba(104, 104, 104, 0.2)",
       borderRadius: "12px",
-      width: "500px",
-      height: "483px",
+      width: isMobile ? "335px" : "500px",
+      minHeight: isMobile ? "421px" : "483px",
       background: "#1f1f1f",
       overflow: "hidden",
     },
@@ -64,6 +66,7 @@ const RecommendedList = ({ items }) => {
           title={selectedBook.title}
           totalPages={selectedBook.totalPages}
           id={selectedBook._id}
+          className={styles.recommended_modal}
         />
       )}
     </>

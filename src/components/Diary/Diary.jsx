@@ -30,7 +30,7 @@ const Diary = () => {
           {Array.isArray(bookProgress) &&
             bookProgress
               .filter((item) => item.status === "inactive")
-              .slice(0, 3)
+              .slice(-2)
               .map((item) => {
                 const pagesRead = item.finishPage - item.startPage;
                 const duration = formatDuration(

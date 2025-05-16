@@ -4,9 +4,11 @@ import MyLibraryModal from "../MyLibraryModal/MyLibraryModal";
 import { Icon } from "../Icon/Icon";
 import { useDispatch } from "react-redux";
 import { delRecommendedBooks } from "../../redux/recommendedBooks/operations";
+import { useIsMobile } from "../../hooks/useIsMobile";
 
 const MyLibraryList = ({ items }) => {
   const dispatch = useDispatch();
+  const isMobile = useIsMobile();
 
   const [selectedBook, setSelectedBook] = useState(null);
   const [visibleCount, setVisibleCount] = useState(10);
@@ -28,8 +30,8 @@ const MyLibraryList = ({ items }) => {
       transform: "translate(-50%, -50%)",
       border: "1px solid rgba(104, 104, 104, 0.2)",
       borderRadius: "12px",
-      width: "500px",
-      height: "483px",
+      width: isMobile ? "335" : "500px",
+      height: isMobile ? "421" : "483px",
       background: "#1f1f1f",
       overflow: "hidden",
     },

@@ -8,32 +8,34 @@ import { Icon } from "../Icon/Icon";
 import Loader from "../Loader/Loader";
 import FinishReadModal from "../FinishReadModal/FinishReadModal";
 import { delRecommendedBooks } from "../../redux/recommendedBooks/operations";
-
-const customStyles = {
-  overlay: {
-    backgroundColor: "rgba(20, 20, 20, 0.6)",
-  },
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-    border: "1px solid rgba(104, 104, 104, 0.2)",
-    borderRadius: "12px",
-    width: "342px",
-    height: "308px",
-    background: "#1f1f1f",
-    overflow: "hidden",
-  },
-};
+import { useIsMobile } from "../../hooks/useIsMobile";
 
 const AddReading = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { id } = useParams();
   const book = useSelector(selectUserReadingBooks);
+  const isMobile = useIsMobile();
+
+  const customStyles = {
+    overlay: {
+      backgroundColor: "rgba(20, 20, 20, 0.6)",
+    },
+    content: {
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+      border: "1px solid rgba(104, 104, 104, 0.2)",
+      borderRadius: "12px",
+      width: isMobile ? "335px" : "342px",
+      height: isMobile ? "290px" : "308px",
+      background: "#1f1f1f",
+      overflow: "hidden",
+    },
+  };
 
   const [status, setStatus] = useState("");
   const [modalIsOpen, setIsOpen] = useState(false);

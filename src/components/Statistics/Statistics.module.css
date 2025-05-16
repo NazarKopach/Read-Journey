@@ -26,8 +26,8 @@
 
 .statistics_graphic_div {
   border-radius: 12px;
-  width: 313px;
-  height: 281px;
+  width: 295px;
+  height: 211px;
   background: #262626;
 }
 
@@ -42,8 +42,8 @@
 }
 
 .statistics_progressbar {
-  width: 189px;
-  height: 189px;
+  width: 116px;
+  height: 116px;
   padding-top: 20px;
   margin-right: auto;
   margin-left: auto;
@@ -74,4 +74,36 @@
   letter-spacing: -0.02em;
   color: #f9f9f9;
   margin-top: 30px;
+}
+
+/*  Tablet */
+
+@media (min-width: 768px) {
+  .statistics_graphic_div {
+    border-radius: 12px;
+    width: 313px;
+    height: 281px;
+    background: #262626;
+  }
+
+  .statistics_progressbar {
+    width: 139px;
+    height: 139px;
+  }
+}
+
+/*  Desktop */
+
+@media (min-width: 1440px) {
+  .statistics_graphic_div {
+    border-radius: 12px;
+    width: 313px;
+    height: 285px;
+    background: #262626;
+  }
+
+  .statistics_progressbar {
+    width: 189px;
+    height: 189px;
+  }
 }

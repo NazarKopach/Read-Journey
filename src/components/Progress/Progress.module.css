@@ -21,10 +21,24 @@
   letter-spacing: -0.02em;
   color: #686868;
   margin-top: 14px;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 }
 
 .progress_img {
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: 40px;
+}
+
+/*  Tablet */
+
+@media (min-width: 768px) {
+  .progress_info {
+    margin-bottom: 60px;
+  }
+}
+
+/*  Desktop */
+
+@media (min-width: 1440px) {
 }

@@ -6,31 +6,33 @@ import { schemaAddBooks } from "../../utils/schema";
 import { addBooks } from "../../redux/recommendedBooks/operations";
 import AddBookModal from "../AddBookModal/AddBookModal";
 import { useState } from "react";
-
-const customStyles = {
-  overlay: {
-    backgroundColor: "rgba(20, 20, 20, 0.6)",
-  },
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-    border: "1px solid rgba(104, 104, 104, 0.2)",
-    borderRadius: "12px",
-    width: "342px",
-    height: "308px",
-    background: "#1f1f1f",
-    overflow: "hidden",
-  },
-};
+import { useIsMobile } from "../../hooks/useIsMobile";
 
 const AddBooks = () => {
   const dispatch = useDispatch();
+  const isMobile = useIsMobile();
 
   const [modalIsOpen, setIsOpen] = useState(false);
+
+  const customStyles = {
+    overlay: {
+      backgroundColor: "rgba(20, 20, 20, 0.6)",
+    },
+    content: {
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+      border: "1px solid rgba(104, 104, 104, 0.2)",
+      borderRadius: "12px",
+      width: isMobile ? "335px" : "342px",
+      height: isMobile ? "272" : "290px",
+      background: "#1f1f1f",
+      overflow: "hidden",
+    },
+  };
 
   function closeModal() {
     setIsOpen(false);

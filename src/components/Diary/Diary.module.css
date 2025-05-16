@@ -1,7 +1,8 @@
 .diary_grafic_div {
   border-radius: 12px;
-  width: 313px;
-  height: 373px;
+  align-items: baseline;
+  width: 295px;
+  height: 250px;
   background: #262626;
   padding: 20px;
   margin-bottom: 20px;
@@ -35,7 +36,8 @@
   letter-spacing: -0.02em;
   text-align: center;
   color: #686868;
-  margin-left: 86px;
+  margin-left: 65px;
+  margin-bottom: 13px;
 }
 
 .diary_info_div {
@@ -73,7 +75,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 8px;
-  margin-left: 105px;
+  margin-left: 100px;
 }
 
 .diary_speed {
@@ -87,4 +89,13 @@
 
 .diary_icon_delete {
   cursor: pointer;
+}
+
+/*  Tablet */
+
+@media (min-width: 768px) {
+  .diary_grafic_div {
+    width: 313px;
+    height: 373px;
+  }
 }

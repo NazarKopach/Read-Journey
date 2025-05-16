@@ -8,6 +8,7 @@
 }
 
 .recommended_list_item {
+  display: block;
   max-width: 137px;
   height: 248px;
   cursor: pointer;
@@ -16,6 +17,7 @@
 .recommended_list_img {
   width: 137px;
   height: 208px;
+  border-radius: 8px;
 }
 
 .recommended_list_title {
@@ -41,4 +43,38 @@
   color: #686868;
   margin: 0;
   max-width: 137px;
+}
+
+/*  Tablet */
+
+@media (max-width: 767px) {
+  .recommended_list_item:nth-of-type(n + 3) {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1439px) {
+  .recommended_list {
+    gap: 25px;
+  }
+
+  .recommended_list_item {
+    display: block;
+  }
+
+  .recommended_list_item:nth-of-type(n + 9) {
+    display: none;
+  }
+}
+
+/*  Desktop */
+
+@media (min-width: 1440px) {
+  .recommended_list {
+    gap: 20px;
+  }
+
+  .recommended_list_item {
+    display: block;
+  }
 }
