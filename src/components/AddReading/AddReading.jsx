@@ -1,14 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
-import styles from "./AddReading.module.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { selectUserReadingBooks } from "../../redux/userReading/selectors";
 import { useEffect, useState } from "react";
 import { fetchReadingBooksId } from "../../redux/userReading/operations";
 import { Icon } from "../Icon/Icon";
 import Loader from "../Loader/Loader";
-import FinishReadModal from "../FinishReadModal/FinishReadModal";
 import { delRecommendedBooks } from "../../redux/recommendedBooks/operations";
 import { useIsMobile } from "../../hooks/useIsMobile";
+
+import FinishReadModal from "../FinishReadModal/FinishReadModal.jsx";
+import styles from "./AddReading.module.css";
 
 const AddReading = () => {
   const dispatch = useDispatch();

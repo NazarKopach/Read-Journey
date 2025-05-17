@@ -1,6 +1,6 @@
-import Filters from "../../components/Filters/Filters";
-import InfoDashboard from "../../components/InfoDashboard/InfoDashboard";
-import QuoteDashboard from "../../components/QuoteDashboard/QuoteDashboard";
+import Filters from "../../components/Filters/Filters.jsx";
+import InfoDashboard from "../../components/InfoDashboard/InfoDashboard.jsx";
+import QuoteDashboard from "../../components/QuoteDashboard/QuoteDashboard.jsx";
 
 import RecommendedBook from "../../components/RecommendedBook/RecommendedBook";
 

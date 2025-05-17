@@ -1,8 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import { setTitle, setAuthor } from "../../redux/filters/filters";
-import styles from "./Filters.module.css";
 import { fetchBooks } from "../../redux/books/operations";
 import { setPage } from "../../redux/books/slice";
+
+import styles from "./Filters.module.css";
 
 const Filters = () => {
   const dispatch = useDispatch();

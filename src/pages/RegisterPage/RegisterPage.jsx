@@ -1,5 +1,5 @@
-import RegisterForm from "../../components/RegisterForm/RegisterForm";
-import RegisterImg from "../../components/RegisterImg/RegisterImg";
+import RegisterForm from "../../components/RegisterForm/RegisterForm.jsx";
+import RegisterImg from "../../components/RegisterImg/RegisterImg.jsx";
 import styles from "./RegisterPage.module.css";
 
 const RegisterPage = () => {

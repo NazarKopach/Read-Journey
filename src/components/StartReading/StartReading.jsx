@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from "react-redux";
-import styles from "./StartReading.module.css";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { schemaStartFinishReading } from "../../utils/schema";
@@ -10,6 +9,8 @@ import {
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { selectUserReadingBooks } from "../../redux/userReading/selectors";
+
+import styles from "./StartReading.module.css";
 
 const StartReading = ({ isReading }) => {
   const dispatch = useDispatch();

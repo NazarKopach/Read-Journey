@@ -1,9 +1,10 @@
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
-import styles from "./Statistics.module.css";
 import { useSelector } from "react-redux";
 import { selectUserReadingBooks } from "../../redux/userReading/selectors";
 import { useReadingStats } from "../../hooks/useReadingStats";
+
+import "react-circular-progressbar/dist/styles.css";
+import styles from "./Statistics.module.css";
 
 const Statistics = () => {
   const book = useSelector(selectUserReadingBooks);

@@ -2,15 +2,16 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Icon } from "../Icon/Icon";
 import { fetchBooks } from "../../redux/books/operations";
+import { setPage } from "../../redux/books/slice";
 import {
   selectBooks,
   selectBooksIsLoading,
   selectPages,
 } from "../../redux/books/selectors";
-import RecommendedList from "../RecommendedList/RecommendedList";
+
+import RecommendedList from "../RecommendedList/RecommendedList.jsx";
+import Loader from "../Loader/Loader.jsx";
 import styles from "./RecommendedBook.module.css";
-import { setPage } from "../../redux/books/slice";
-import Loader from "../Loader/Loader";
 
 const RecommendedBook = () => {
   const dispatch = useDispatch();

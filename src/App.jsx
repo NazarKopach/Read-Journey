@@ -2,24 +2,30 @@ import { lazy, Suspense, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import { RestrictedRoute } from "./components/RestrictedRoute/RestrictedRoute";
 import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
-import SvgSprite from "./components/SvgSprite/SvgSprite";
 import { useDispatch, useSelector } from "react-redux";
 import { selectUserIsRefreshing } from "./redux/auth/selectors";
 import { apiGetCurrentUser } from "./redux/auth/operations";
-import Loader from "./components/Loader/Loader";
-
 import { ToastContainer } from "react-toastify";
-import Dashboard from "./components/Dashboard/Dashboard";
 
-const LoginPage = lazy(() => import("./pages/LoginPage/LoginPage"));
-const MyLibraryPage = lazy(() => import("./pages/MyLibraryPage/MyLibraryPage"));
-const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
-const RecommendedPage = lazy(() =>
-  import("./pages/RecommendedPage/RecommendedPage")
+import Loader from "./components/Loader/Loader.jsx";
+import SvgSprite from "./components/SvgSprite/SvgSprite.jsx";
+import Dashboard from "./components/Dashboard/Dashboard.jsx";
+
+const LoginPage = lazy(() => import("./pages/LoginPage/LoginPage.jsx"));
+const MyLibraryPage = lazy(() =>
+  import("./pages/MyLibraryPage/MyLibraryPage.jsx")
 );
-const ReadingPage = lazy(() => import("./pages/ReadingPage/ReadingPage"));
-const RegisterPage = lazy(() => import("./pages/RegisterPage/RegisterPage"));
-const MainLayout = lazy(() => import("./MainLayout/MainLayout"));
+const NotFoundPage = lazy(() =>
+  import("./pages/NotFoundPage/NotFoundPage.jsx")
+);
+const RecommendedPage = lazy(() =>
+  import("./pages/RecommendedPage/RecommendedPage.jsx")
+);
+const ReadingPage = lazy(() => import("./pages/ReadingPage/ReadingPage.jsx"));
+const RegisterPage = lazy(() =>
+  import("./pages/RegisterPage/RegisterPage.jsx")
+);
+const MainLayout = lazy(() => import("./MainLayout/MainLayout.jsx"));
 
 function App() {
   const isRefreshing = useSelector(selectUserIsRefreshing);

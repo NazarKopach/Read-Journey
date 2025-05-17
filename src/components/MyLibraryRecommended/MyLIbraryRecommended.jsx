@@ -1,8 +1,9 @@
 import { useSelector } from "react-redux";
-import styles from "./MyLibraryRecommended.module.css";
 import { selectBooks } from "../../redux/books/selectors";
 import { Link, useNavigate } from "react-router-dom";
 import { Icon } from "../Icon/Icon";
+
+import styles from "./MyLibraryRecommended.module.css";
 
 const MyLibraryRecommended = () => {
   const navigate = useNavigate();

@@ -1,10 +1,11 @@
-import ReactModal from "react-modal";
 import { Icon } from "../Icon/Icon";
-import styles from "./MobileModal.module.css";
-import Navigation from "../Navigation/Navigation";
 import { apiLogoutUser } from "../../redux/auth/operations";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
+
+import ReactModal from "react-modal";
+import Navigation from "../Navigation/Navigation";
+import styles from "./MobileModal.module.css";
 
 const MobileModal = ({ modalIsOpen, closeModal, customStyles }) => {
   const dispatch = useDispatch();

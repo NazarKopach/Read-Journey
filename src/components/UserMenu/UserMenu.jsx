@@ -1,10 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
-import styles from "./UserMenu.module.css";
 import { apiLogoutUser } from "../../redux/auth/operations";
 import { selectUser } from "../../redux/auth/selectors";
 import { useState } from "react";
 import { Icon } from "../Icon/Icon";
-import MobileModal from "../MobileModal/MobileModal";
+
+import styles from "./UserMenu.module.css";
+import MobileModal from "../MobileModal/MobileModal.jsx";
 
 const customStyles = {
   overlay: {

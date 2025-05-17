@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { useIsMobile } from "../../hooks/useIsMobile";
+
 import styles from "./RecommendedList.module.css";
 import RecommendedModal from "../RecommendedModal/RecommendedModal";
-import { useIsMobile } from "../../hooks/useIsMobile";
 
 const RecommendedList = ({ items }) => {
   const isMobile = useIsMobile();

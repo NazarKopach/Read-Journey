@@ -1,6 +1,7 @@
+import { Icon } from "../Icon/Icon";
+
 import ReactModal from "react-modal";
 import styles from "./AddBookModal.module.css";
-import { Icon } from "../Icon/Icon";
 
 const AddBookModal = ({ modalIsOpen, customStyles, closeModal }) => {
   return (

@@ -1,8 +1,9 @@
-import ReactModal from "react-modal";
-import styles from "./Recommended.module.css";
 import { Icon } from "../Icon/Icon";
 import { useDispatch } from "react-redux";
 import { addRecommendedBooks } from "../../redux/recommendedBooks/operations";
+
+import ReactModal from "react-modal";
+import styles from "./Recommended.module.css";
 
 const RecommendedModal = ({
   modalIsOpen,

@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Icon } from "../Icon/Icon";
-import styles from "./Diary.module.css";
 import { selectUserReadingBooks } from "../../redux/userReading/selectors";
 import { useParams } from "react-router-dom";
 import { deleteReadingBooksId } from "../../redux/userReading/operations";
+
+import styles from "./Diary.module.css";
 
 const Diary = () => {
   const book = useSelector(selectUserReadingBooks);

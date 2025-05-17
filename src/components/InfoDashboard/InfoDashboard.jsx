@@ -1,6 +1,7 @@
-import { Link, NavLink, useNavigate } from "react-router-dom";
-import styles from "./InfoDashboard.module.css";
+import { Link, useNavigate } from "react-router-dom";
 import { Icon } from "../Icon/Icon";
+
+import styles from "./InfoDashboard.module.css";
 
 const InfoDashboard = () => {
   const navigate = useNavigate();

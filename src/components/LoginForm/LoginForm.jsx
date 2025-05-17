@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import { Icon } from "../Icon/Icon";
-import styles from "./LoginForm.module.css";
 import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -8,6 +7,8 @@ import { useEffect, useState } from "react";
 import { schemaLogin } from "../../utils/schema";
 import { apiLoginUser } from "../../redux/auth/operations";
 import { useDispatch } from "react-redux";
+
+import styles from "./LoginForm.module.css";
 
 const LoginForm = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);

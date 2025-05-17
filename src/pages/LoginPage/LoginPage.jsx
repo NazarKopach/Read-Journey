@@ -1,5 +1,5 @@
-import LoginForm from "../../components/LoginForm/LoginForm";
-import RegisterImg from "../../components/RegisterImg/RegisterImg";
+import LoginForm from "../../components/LoginForm/LoginForm.jsx";
+import RegisterImg from "../../components/RegisterImg/RegisterImg.jsx";
 import styles from "./LoginPage.module.css";
 
 const LoginPage = () => {

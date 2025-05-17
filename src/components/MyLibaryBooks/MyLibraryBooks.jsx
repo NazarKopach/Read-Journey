@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { userSelectBooksState } from "../../redux/recommendedBooks/selectors";
 import { userRecommendedBooks } from "../../redux/recommendedBooks/operations";
 
-import styles from "./MyLibraryBooks.module.css";
-import MyLibraryList from "../MyLibraryList/MyLibraryList";
+import MyLibraryList from "../MyLibraryList/MyLibraryList.jsx";
 import Select from "react-select";
+import styles from "./MyLibraryBooks.module.css";
 
 const MyLibraryBook = () => {
   const dispatch = useDispatch();

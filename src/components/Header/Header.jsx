@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { Icon } from "../Icon/Icon";
 
-import UserMenu from "../UserMenu/UserMenu";
-
+import UserMenu from "../UserMenu/UserMenu.jsx";
+import Navigation from "../Navigation/Navigation.jsx";
 import styles from "./Header.module.css";
-import Navigation from "../Navigation/Navigation";
 
 const Header = () => {
   const [isTablet, setIsTablet] = useState(window.innerWidth < 1440);

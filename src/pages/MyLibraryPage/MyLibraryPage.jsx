@@ -1,6 +1,6 @@
-import AddBooks from "../../components/AddBooks/AddBooks";
-import MyLibraryBook from "../../components/MyLibaryBooks/MyLibraryBooks";
-import MyLibraryRecommended from "../../components/MyLibraryRecommended/MyLIbraryRecommended";
+import AddBooks from "../../components/AddBooks/AddBooks.jsx";
+import MyLibraryBook from "../../components/MyLibaryBooks/MyLibraryBooks.jsx";
+import MyLibraryRecommended from "../../components/MyLibraryRecommended/MyLIbraryRecommended.jsx";
 
 import styles from "./MyLibraryPage.module.css";
 

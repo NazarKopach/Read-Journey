@@ -1,7 +1,8 @@
-import ReactModal from "react-modal";
-import styles from "./MyLibraryModal.module.css";
 import { Icon } from "../Icon/Icon";
 import { useNavigate } from "react-router-dom";
+
+import ReactModal from "react-modal";
+import styles from "./MyLibraryModal.module.css";
 
 const MyLibraryModal = ({
   modalIsOpen,

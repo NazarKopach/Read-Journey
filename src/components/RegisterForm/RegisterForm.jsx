@@ -1,7 +1,5 @@
 import { NavLink } from "react-router-dom";
 import { Icon } from "../Icon/Icon";
-import styles from "./RegisterForm.module.css";
-
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useEffect, useState } from "react";
@@ -9,6 +7,8 @@ import { schemaRegister } from "../../utils/schema";
 import { useDispatch } from "react-redux";
 import { apiRegisterUser } from "../../redux/auth/operations";
 import { toast } from "react-toastify";
+
+import styles from "./RegisterForm.module.css";
 
 const RegisterForm = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);

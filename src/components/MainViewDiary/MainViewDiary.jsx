@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Icon } from "../Icon/Icon";
-import styles from "./MainViewDiary.module.css";
+
 import Diary from "../Diary/Diary";
 import Statistics from "../Statistics/Statistics";
+import styles from "./MainViewDiary.module.css";
 
 const MainViewDiary = () => {
   const [activeView, setActiveView] = useState("Diary");

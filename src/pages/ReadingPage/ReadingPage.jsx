@@ -1,10 +1,10 @@
-import { useSelector } from "react-redux";
-import AddReading from "../../components/AddReading/AddReading";
-import Progress from "../../components/Progress/Progress";
-import StartReading from "../../components/StartReading/StartReading";
+import MainViewDiary from "../../components/MainViewDiary/MainViewDiary.jsx";
+import AddReading from "../../components/AddReading/AddReading.jsx";
+import Progress from "../../components/Progress/Progress.jsx";
+import StartReading from "../../components/StartReading/StartReading.jsx";
 import styles from "./ReadingPage.module.css";
 import { selectUserReadingBooks } from "../../redux/userReading/selectors";
-import MainViewDiary from "../../components/MainViewDiary/MainViewDiary";
+import { useSelector } from "react-redux";
 
 const ReadingPage = () => {
   const book = useSelector(selectUserReadingBooks);

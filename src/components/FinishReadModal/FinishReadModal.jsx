@@ -1,6 +1,7 @@
+import { Icon } from "../Icon/Icon";
+
 import ReactModal from "react-modal";
 import styles from "./FinishReadModal.module.css";
-import { Icon } from "../Icon/Icon";
 
 const FinishReadModal = ({ modalIsOpen, customStyles, closeModal }) => {
   return (

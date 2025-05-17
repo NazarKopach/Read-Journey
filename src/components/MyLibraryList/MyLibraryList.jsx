@@ -1,10 +1,11 @@
 import { useState } from "react";
-import styles from "./MyLibraryList.module.css";
-import MyLibraryModal from "../MyLibraryModal/MyLibraryModal";
 import { Icon } from "../Icon/Icon";
 import { useDispatch } from "react-redux";
 import { delRecommendedBooks } from "../../redux/recommendedBooks/operations";
 import { useIsMobile } from "../../hooks/useIsMobile";
+
+import MyLibraryModal from "../MyLibraryModal/MyLibraryModal.jsx";
+import styles from "./MyLibraryList.module.css";
 
 const MyLibraryList = ({ items }) => {
   const dispatch = useDispatch();
