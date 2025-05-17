@@ -6,7 +6,7 @@ import { addBooks } from "../../redux/recommendedBooks/operations";
 import { useState } from "react";
 import { useIsMobile } from "../../hooks/useIsMobile";
 
-import AddBookModal from "../AddBookModal/AddBookModa.jsx";
+import AddBookModal from "../AddBookModal/AddBookModal.jsx";
 import styles from "./AddBooks.module.css";
 
 const AddBooks = () => {
