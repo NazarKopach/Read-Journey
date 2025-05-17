@@ -1,6 +1,6 @@
-import styles from "./QuoteDashboard.module.css";
+import styles from "./Quote.module.css";
 
-const QuoteDashboard = () => {
+const Quote = () => {
   return (
     <div className={styles.quote_dashboard_div}>
       <img
@@ -17,4 +17,4 @@ const QuoteDashboard = () => {
   );
 };
 
-export default QuoteDashboard;
+export default Quote;

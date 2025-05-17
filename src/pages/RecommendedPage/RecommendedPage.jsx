@@ -1,6 +1,6 @@
 import Filters from "../../components/Filters/Filters.jsx";
 import InfoDashboard from "../../components/InfoDashboard/InfoDashboard.jsx";
-import QuoteDashboard from "../../components/QuoteDashboard/QuoteDashboard.jsx";
+import Quote from "../../components/Quote/Quote.jsx";
 
 import RecommendedBook from "../../components/RecommendedBook/RecommendedBook";
 
@@ -12,7 +12,7 @@ const RecommendedPage = () => {
       <div className={styles.recommended_page_dashboard}>
         <Filters />
         <InfoDashboard />
-        <QuoteDashboard />
+        <Quote />
       </div>
 
       <RecommendedBook />
