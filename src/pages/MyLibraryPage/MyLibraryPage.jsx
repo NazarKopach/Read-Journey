@@ -1,5 +1,5 @@
 import AddBooks from "../../components/AddBooks/AddBooks.jsx";
-import MyLibraryBook from "../../components/MyLibaryBooks/MyLibraryBooks.jsx";
+import MyLibraryBooks from "../../components/MyLibaryBooks/MyLibraryBooks.jsx";
 import MyLibraryRecommended from "../../components/MyLibraryRecommended/MyLIbraryRecommended.jsx";
 
 import styles from "./MyLibraryPage.module.css";
@@ -11,7 +11,7 @@ const MyLibraryPage = () => {
         <AddBooks />
         <MyLibraryRecommended />
       </div>
-      <MyLibraryBook />
+      <MyLibraryBooks />
     </div>
   );
 };

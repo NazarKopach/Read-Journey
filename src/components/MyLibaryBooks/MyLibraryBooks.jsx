@@ -7,7 +7,7 @@ import MyLibraryList from "../MyLibraryList/MyLibraryList.jsx";
 import Select from "react-select";
 import styles from "./MyLibraryBooks.module.css";
 
-const MyLibraryBook = () => {
+const MyLibraryBooks = () => {
   const dispatch = useDispatch();
   const userBooks = useSelector(userSelectBooksState);
 
@@ -99,4 +99,4 @@ const MyLibraryBook = () => {
     </div>
   );
 };
-export default MyLibraryBook;
+export default MyLibraryBooks;
