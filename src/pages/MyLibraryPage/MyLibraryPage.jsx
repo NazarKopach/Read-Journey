@@ -1,5 +1,5 @@
 import AddBooks from "../../components/AddBooks/AddBooks";
-import MyLibraryBooks from "../../components/MylibaryBooks/MylibraryBooks";
+import MyLibraryBooks from "../../components/MyLibaryBooks/MyLibraryBooks";
 import MyLibraryRecommended from "../../components/MyLibraryRecommended/MyLIbraryRecommended";
 
 import styles from "./MyLibraryPage.module.css";
