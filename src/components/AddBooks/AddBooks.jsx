@@ -6,8 +6,8 @@ import { addBooks } from "../../redux/recommendedBooks/operations";
 import { useState } from "react";
 import { useIsMobile } from "../../hooks/useIsMobile";
 
-import styles from "./AddBooks.module.css";
 import AddBookModal from "../AddBookModal/AddBookModa.jsx";
+import styles from "./AddBooks.module.css";
 
 const AddBooks = () => {
   const dispatch = useDispatch();
