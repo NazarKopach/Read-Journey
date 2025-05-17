@@ -7,7 +7,7 @@
   margin-top: 16px;
 }
 
-.add_reading_dashboard {
+.reading_dashboard {
   display: flex;
   flex-direction: column;
   border-radius: 30px;
@@ -20,11 +20,11 @@
 /*  Tablet */
 
 @media (min-width: 768px) {
-  .add_reading_dashboard {
+  .reading_dashboard {
     flex-direction: row;
     gap: 20px;
     width: 704px;
-    min-height: 518px;
+    min-height: 336px;
   }
 }
 
@@ -32,20 +32,15 @@
 
 @media (min-width: 1440px) {
   .reading_page_div {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    margin-top: 16px;
+    flex-direction: row;
+    align-items: start;
   }
 
-  .add_reading_dashboard {
-    display: flex;
+  .reading_dashboard {
     flex-direction: column;
     gap: 0;
-    border-radius: 30px;
     width: 353px;
     min-height: 478px;
-    background: #1f1f1f;
     padding: 40px 20px 0;
   }
 }

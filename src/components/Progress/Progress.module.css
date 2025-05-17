@@ -1,6 +1,7 @@
 .proress_div {
   display: flex;
   flex-direction: column;
+  height: 353px;
 }
 
 .progress_title {
@@ -33,6 +34,14 @@
 /*  Tablet */
 
 @media (min-width: 768px) {
+  .proress_div {
+    height: 304px;
+  }
+
+  .progress_title {
+    margin-top: 0;
+  }
+
   .progress_info {
     margin-bottom: 60px;
   }
@@ -41,4 +50,11 @@
 /*  Desktop */
 
 @media (min-width: 1440px) {
+  .proress_div {
+    height: 463px;
+  }
+
+  .progress_title {
+    margin-top: 40px;
+  }
 }

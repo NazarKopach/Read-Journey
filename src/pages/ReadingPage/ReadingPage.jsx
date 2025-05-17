@@ -12,7 +12,7 @@ const ReadingPage = () => {
 
   return (
     <div className={styles.reading_page_div}>
-      <div className={styles.add_reading_dashboard}>
+      <div className={styles.reading_dashboard}>
         <StartReading />
         {bookProgress.length > 0 ? <MainViewDiary /> : <Progress />}
       </div>

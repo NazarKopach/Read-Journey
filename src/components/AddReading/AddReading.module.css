@@ -58,6 +58,11 @@
 /*  Tablet */
 
 @media (min-width: 768px) {
+  .add_reading_div {
+    width: 704px;
+    min-height: 518px;
+  }
+
   .add_reading_h2 {
     font-size: 28px;
   }
@@ -79,11 +84,8 @@
 
 @media (min-width: 1440px) {
   .add_reading_div {
-    border-radius: 30px;
     width: 847px;
     min-height: 651px;
-    background: #1f1f1f;
-    padding: 40px;
   }
 
   .add_readin_img {
