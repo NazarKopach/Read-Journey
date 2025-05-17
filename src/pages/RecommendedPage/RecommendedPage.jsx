@@ -1,6 +1,7 @@
 import Filters from "../../components/Filters/Filters";
 import InfoDashboard from "../../components/InfoDashboard/InfoDashboard";
 import QuoteDashboard from "../../components/QuoteDashboard/QuoteDashboard";
+
 import RecommendedBook from "../../components/RecommendedBook/RecommendedBook";
 
 import styles from "./RecommendedPage.module.css";
