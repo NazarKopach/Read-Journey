@@ -31,7 +31,7 @@ const Diary = () => {
           {Array.isArray(bookProgress) &&
             bookProgress
               .filter((item) => item.status === "inactive")
-              .slice(-2)
+              .slice(-3)
               .map((item) => {
                 const pagesRead = item.finishPage - item.startPage;
                 const duration = formatDuration(
@@ -42,7 +42,7 @@ const Diary = () => {
                 const readingId = item._id;
 
                 return (
-                  <li key={item._id}>
+                  <li key={item._id} className={styles.diary_list_item}>
                     <div className={styles.diary_icon_div}>
                       <Icon id="icon-diary-list" width="20" height="20" />
                       <p className={styles.diary_data}>

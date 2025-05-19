@@ -53,10 +53,10 @@ const AddReading = () => {
   }, [book]);
 
   useEffect(() => {
-    if (book.status === "done") {
+    if (book?.status === "done" && book._id === id) {
       setIsOpen(true);
     }
-  }, [book]);
+  }, [book, id]);
 
   async function closeModal() {
     try {

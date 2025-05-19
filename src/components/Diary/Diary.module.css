@@ -23,6 +23,10 @@
   padding: 0;
 }
 
+.diary_list_item:nth-of-type(n + 3) {
+  display: none;
+}
+
 .diary_icon_div {
   display: flex;
   align-items: center;
@@ -105,5 +109,13 @@
 @media (min-width: 1440px) {
   .diary_grafic_div {
     height: 373px;
+  }
+
+  .diary_list_item:nth-of-type(n + 4) {
+    display: none;
+  }
+
+  .diary_list_item:nth-of-type(-n + 3) {
+    display: block;
   }
 }

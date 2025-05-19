@@ -47,7 +47,10 @@ const RecommendedList = ({ items }) => {
               onClick={() => openModal(book)}
             >
               <img
-                src={book.imageUrl}
+                src={
+                  book.imageUrl ||
+                  "https://res.cloudinary.com/demo/image/upload/book-placeholder.jpg"
+                }
                 alt={book.description}
                 className={styles.recommended_list_img}
               />
