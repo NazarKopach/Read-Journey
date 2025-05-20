@@ -10,12 +10,16 @@ import { useIsMobile } from "../../hooks/useIsMobile";
 
 import FinishReadModal from "../FinishReadModal/FinishReadModal.jsx";
 import styles from "./AddReading.module.css";
+import { userSelectBooksLoading } from "../../redux/recommendedBooks/selectors.js";
 
 const AddReading = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { id } = useParams();
+
   const book = useSelector(selectUserReadingBooks);
+  const loading = useSelector(userSelectBooksLoading);
+
   const isMobile = useIsMobile();
 
   const customStyles = {
@@ -71,25 +75,23 @@ const AddReading = () => {
   return (
     <div className={styles.add_reading_div}>
       <h2 className={styles.add_reading_h2}>My reading</h2>
-      {book ? (
-        <div className={styles.add_readin_card_div}>
-          <img
-            className={styles.add_readin_img}
-            src={book.imageUrl}
-            alt={book.title}
-          />
-          <p className={styles.add_readin_title}>{book.title}</p>
-          <p className={styles.add_readin_author}>{book.author}</p>
-          <Icon
-            id={status === "active" ? "icon-block-1" : "icon-block"}
-            width="50"
-            height="50"
-            className={styles.add_readin_icon}
-          />
-        </div>
-      ) : (
-        <Loader />
-      )}
+      {loading && <Loader />}
+      <div className={styles.add_readin_card_div}>
+        <img
+          className={styles.add_readin_img}
+          src={book.imageUrl}
+          alt={book.title}
+        />
+        <p className={styles.add_readin_title}>{book.title}</p>
+        <p className={styles.add_readin_author}>{book.author}</p>
+        <Icon
+          id={status === "active" ? "icon-block-1" : "icon-block"}
+          width="50"
+          height="50"
+          className={styles.add_readin_icon}
+        />
+      </div>
+
       <FinishReadModal
         modalIsOpen={modalIsOpen}
         closeModal={closeModal}

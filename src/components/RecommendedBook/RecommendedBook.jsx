@@ -16,7 +16,7 @@ import styles from "./RecommendedBook.module.css";
 const RecommendedBook = () => {
   const dispatch = useDispatch();
   const items = useSelector(selectBooks);
-  const isLoading = useSelector(selectBooksIsLoading);
+  const loading = useSelector(selectBooksIsLoading);
   const { page, totalPages } = useSelector(selectPages);
   const { title, author } = useSelector((state) => state.filters);
 
@@ -36,8 +36,8 @@ const RecommendedBook = () => {
     <div className={styles.recommended_book_div}>
       <div className={styles.recommended_book_title_icon_div}>
         <h2 className={styles.recommended_book_title}>Recommended</h2>
-        {isLoading && <Loader />}
-        {Array.isArray(items) && items.length === 0 && !isLoading && (
+        {loading && <Loader />}
+        {Array.isArray(items) && items.length === 0 && !loading && (
           <p className={styles.recommended_books_error}>No books found.</p>
         )}
         <div>
