@@ -49,7 +49,7 @@ const RecommendedList = ({ items }) => {
               <img
                 src={
                   book.imageUrl ||
-                  "https://res.cloudinary.com/demo/image/upload/book-placeholder.jpg"
+                  "https://res.cloudinary.com/dv2zqpclm/image/upload/v1747830751/book_bftknp.png"
                 }
                 alt={book.description}
                 className={styles.recommended_list_img}

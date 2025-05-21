@@ -23,6 +23,7 @@
 .my_library_list_img {
   width: 137px;
   height: 208px;
+  border-radius: 8px;
 }
 
 .my_library_list_title {

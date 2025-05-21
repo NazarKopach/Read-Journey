@@ -16,6 +16,7 @@ import styles from "./RecommendedBook.module.css";
 const RecommendedBook = () => {
   const dispatch = useDispatch();
   const items = useSelector(selectBooks);
+
   const loading = useSelector(selectBooksIsLoading);
   const { page, totalPages } = useSelector(selectPages);
   const { title, author } = useSelector((state) => state.filters);

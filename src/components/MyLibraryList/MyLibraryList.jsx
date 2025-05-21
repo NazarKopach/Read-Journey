@@ -53,7 +53,10 @@ const MyLibraryList = ({ items }) => {
           items.slice(0, visibleCount).map((book) => (
             <li key={book._id} className={styles.my_library_list_item}>
               <img
-                src={book.imageUrl}
+                src={
+                  book.imageUrl ||
+                  "https://res.cloudinary.com/dv2zqpclm/image/upload/v1747830751/book_bftknp.png"
+                }
                 alt={book.description}
                 className={styles.my_library_list_img}
                 onClick={() => openModal(book)}
