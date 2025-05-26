@@ -79,7 +79,10 @@ const AddReading = () => {
       <div className={styles.add_readin_card_div}>
         <img
           className={styles.add_readin_img}
-          src={book.imageUrl}
+          src={
+            book.imageUrl ||
+            "https://res.cloudinary.com/dv2zqpclm/image/upload/v1747830751/book_bftknp.png"
+          }
           alt={book.title}
         />
         <p className={styles.add_readin_title}>{book.title}</p>

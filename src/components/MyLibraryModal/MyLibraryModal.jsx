@@ -43,7 +43,13 @@ const MyLibraryModal = ({
       </div>
 
       <li className={styles.my_library_modal_div}>
-        <img src={img} className={styles.my_library_modal_img} />
+        <img
+          src={
+            img ||
+            "https://res.cloudinary.com/dv2zqpclm/image/upload/v1747830751/book_bftknp.png"
+          }
+          className={styles.my_library_modal_img}
+        />
         <p className={styles.my_library_modal_title}>{title}</p>
         <p className={styles.my_library_modal_author}>{author}</p>
         <p className={styles.my_library_modal_total_page}>{totalPages}</p>
