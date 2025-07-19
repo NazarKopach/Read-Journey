@@ -13,17 +13,14 @@
 }
 
 .nav_wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-  margin-top: 218px;
+  display: none;
 }
 
 /* Tablet */
 
 @media (min-width: 768px) {
   .nav_wrapper {
+    display: flex;
     flex-direction: row;
     gap: 40px;
     margin: 0;

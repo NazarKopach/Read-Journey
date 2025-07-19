@@ -21,3 +21,11 @@
   color: #f9f9f9;
   background-color: transparent;
 }
+
+.wrapper_nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  margin-top: 218px;
+}

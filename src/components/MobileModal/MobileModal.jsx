@@ -42,7 +42,11 @@ const MobileModal = ({ modalIsOpen, closeModal, customStyles }) => {
         <Icon id="icon-x" width="28" height="28" onClick={closeModal} />
       </div>
       <div className={styles.mobile_modal_nav_div}>
-        <Navigation closeModal={closeModal} />
+        <Navigation
+          closeModal={closeModal}
+          wrapperClass={styles.wrapper_nav}
+          linkClass={styles.link_naw}
+        />
       </div>
       <button
         className={styles.button_user_mobile}

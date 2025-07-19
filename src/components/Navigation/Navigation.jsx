@@ -3,12 +3,11 @@ import { NavLink } from "react-router-dom";
 import styles from "./Navigation.module.css";
 import clsx from "clsx";
 
-const buildCssClasses = ({ isActive }) =>
-  clsx(styles.link, isActive && styles.active);
-
-const Navigation = ({ closeModal }) => {
+const Navigation = ({ closeModal, wrapperClass, linkClass }) => {
+  const buildCssClasses = ({ isActive }) =>
+    clsx(styles.link, linkClass, isActive && styles.active);
   return (
-    <nav className={styles.nav_wrapper}>
+    <nav className={clsx(styles.nav_wrapper, wrapperClass)}>
       <NavLink
         to="/recommended"
         className={buildCssClasses}
